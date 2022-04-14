@@ -1,7 +1,7 @@
 from animal.models import EspecieAnimal, LocalResgate, OrigemAnimal, MotivoResgate, RelatorioAnimal, Doador, FichaClinica, Alimentacao, Observacao, Ecdise, Morfometria, Animal
+from animal.actions import animal_morto, imprimir_relatorio
 # from animal.models import *
 
-from django.shortcuts import render, redirect, HttpResponse
 from django.contrib import admin
 
 
@@ -179,6 +179,7 @@ class AnimalAdmin(admin.ModelAdmin):
         'esta_vivo',
         )
     actions = [
-
+        animal_morto,
+        imprimir_relatorio
         ]
 admin.site.register(Animal, AnimalAdmin)

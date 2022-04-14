@@ -77,7 +77,7 @@ class OrigemAnimal(BaseModel):
         verbose_name='Descrição',
         )
     def __str__(self):
-        return (f"Descrição: {self.descricao} \n")
+        return (f"{self.descricao} \n")
     class Meta:
         verbose_name = 'Origem do Animal'
         verbose_name_plural = 'Origem do Animais'
@@ -89,7 +89,7 @@ class MotivoResgate(BaseModel):
         verbose_name='Descrição',
         )
     def __str__(self):
-        return (f"Descrição: {self.descricao} \n")
+        return (f"{self.descricao} \n")
     class Meta:
         verbose_name = 'Motivo'
         verbose_name_plural = 'Motivos'
