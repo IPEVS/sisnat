@@ -24,7 +24,7 @@ class EspecieAnimalAdmin(admin.ModelAdmin):
         'nome_popular',
         'classe',
         )
-    search_fields = []
+    search_fields = ['nome_popular']
 
 
 class LocalResgateAdmin(admin.ModelAdmin):
@@ -141,6 +141,7 @@ admin.site.register(FichaClinica)
 @admin.register(Animal)
 class AnimalAdmin(admin.ModelAdmin):
     inlines = [FichaClinicaInline]
+    autocomplete_fields = ['especie']
     list_display = (
         'especie',
         # 'imagem_animal',
