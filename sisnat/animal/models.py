@@ -220,7 +220,7 @@ class Animal(BaseModel):
 
     class Meta:
         verbose_name = 'Animal'
-        verbose_name_plural = '1 - Animais'
+        verbose_name_plural = 'Animais'
 
     def __str__(self):
         return (f"Cod: {self.codigo_interno} \n"
@@ -244,7 +244,7 @@ class FichaClinica(BaseModel):
 
     class Meta:
         verbose_name = 'Ficha Clínica'
-        verbose_name_plural = '3 - Fichas Clínicas'
+        verbose_name_plural = 'Fichas Clínicas'
 
 
 class Alimentacao(BaseModel):
@@ -261,10 +261,10 @@ class Alimentacao(BaseModel):
         verbose_name='Alimento'
     )
     unidade_de_medida = models.CharField(
-        verbose_name='Condição Física',
-        max_length=7,
-        choices=choices.CONDICAO_FISICA_CHOICES,
-        default=choices.BOA,
+        verbose_name='Unidade de medida',
+        max_length=20,
+        blank=True,
+        null=True,
     )
     quantidade = models.FloatField(
         blank=True,
@@ -278,7 +278,7 @@ class Alimentacao(BaseModel):
 
     class Meta:
         verbose_name = 'Alimentação'
-        verbose_name_plural = '2 - Alimentações'
+        verbose_name_plural = 'Alimentações'
 
 
 class Observacao(BaseModel):
@@ -298,7 +298,7 @@ class Observacao(BaseModel):
 
     class Meta:
         verbose_name = 'Observação'
-        verbose_name_plural = '4 - Observações'
+        verbose_name_plural = 'Observações'
 
 
 class Ecdise(BaseModel):
@@ -327,7 +327,7 @@ class Ecdise(BaseModel):
 
     class Meta:
         verbose_name = 'Ecdise'
-        verbose_name_plural = '5 - Ecdise'
+        verbose_name_plural = 'Ecdise'
 
 
 class Morfometria(BaseModel):
@@ -427,4 +427,4 @@ class Morfometria(BaseModel):
 
     class Meta:
         verbose_name = 'Morfometria'
-        verbose_name_plural = '6 - Morfometria'
+        verbose_name_plural = 'Morfometria'
