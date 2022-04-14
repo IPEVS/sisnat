@@ -30,13 +30,14 @@ class EspecieAnimal(BaseModel):
 
 
 class LocalResgate(BaseModel):
-    longitude = models.FloatFieldj(
+    longitude = models.FloatField(
+        max_length=12,
         blank=True,
         null=True,
         verbose_name='Longitude',
         )
     latitude = models.FloatField(
-        max_length=50,
+        max_length=12,
         blank=True,
         null=True,
         verbose_name='Latitude',
@@ -61,10 +62,10 @@ class LocalResgate(BaseModel):
         )
     def __str__(self):
         return (f"Município: {self.municipio} \n"
-                f"Endereço: {self.endereco} \n"
-                f"Área do resgate: {self.area_resgate} \n"
-                f"Logitude: {self.longitude} | "
-                f"Latitude: {self.latitude}")
+                f"Endereço: {self.endereco} \n")
+                # f"Área do resgate: {self.area_resgate} \n"
+                # f"Logitude: {self.longitude} | "
+                # f"Latitude: {self.latitude}")
     class Meta:
         verbose_name = 'Local do Resgate'
         verbose_name_plural = 'Locais do Resgate'
@@ -116,11 +117,15 @@ class RelatorioAnimal(BaseModel):
         OrigemAnimal,
         on_delete=models.SET_NULL,
         verbose_name='Origem do Animal',
+        blank=True,
+        null=True,
         )
     motivo = models.ForeignKey(
         MotivoResgate,
         on_delete=models.SET_NULL,
         verbose_name='Motivo do resgate do Animal',
+        blank=True,
+        null=True,
         )
     soltura = models.TextField(
         blank=True,
@@ -180,7 +185,7 @@ class Animal(BaseModel):
         null=True,
         )
     sexo = models.CharField(
-        max_length=5,
+        max_length=10,
         choices=choices.SEXO_CHOICES,
         default=choices.INDEFINIDO,
         verbose_name='Sexo',
@@ -209,6 +214,8 @@ class Animal(BaseModel):
         Doador,
         on_delete=models.SET_NULL,
         verbose_name='Doador',
+        blank=True,
+        null=True,
         )
 
     class Meta:
@@ -244,15 +251,18 @@ class Alimentacao(BaseModel):
     animal = models.ForeignKey(
         Animal,
         on_delete=models.CASCADE,
-        verbose_name="Codigo Interno",
+        verbose_name="Código Interno",
         )
     data_alimentacao = models.DateField(
         verbose_name='Data da alimentação',
         )
-    alimento = models.CharField(max_length=200)
+    alimento = models.CharField(
+        max_length=200,
+        verbose_name='Alimento'
+    )
     unidade_de_medida = models.CharField(
         verbose_name='Condição Física',
-        max_length=3,
+        max_length=7,
         choices=choices.CONDICAO_FISICA_CHOICES,
         default=choices.BOA,
     )
@@ -297,7 +307,7 @@ class Ecdise(BaseModel):
         on_delete=models.CASCADE,
         )
     classe = models.CharField(
-        max_length=3,
+        max_length=9,
         choices=choices.CLASSE_ANIMAIS_CHOICES,
         verbose_name='Classe do animal',
         )
@@ -326,7 +336,7 @@ class Morfometria(BaseModel):
         on_delete=models.CASCADE,
         )
     classe = models.CharField(
-        max_length=3,
+        max_length=9,
         choices=choices.CLASSE_ANIMAIS_CHOICES,
         verbose_name='Classe do animal',
         )

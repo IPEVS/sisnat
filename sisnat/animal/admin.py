@@ -1,8 +1,10 @@
 from django.contrib import admin
 from django.shortcuts import render, redirect, HttpResponse
    
-from sisnat.animal.models import *
+from animal.models import *
 
+class ChoiceAdmin(admin.ModelAdmin):
+    autocomplete_fields = []
 
 class EspecieAnimalAdmin(admin.ModelAdmin):
     list_display = (
@@ -20,7 +22,7 @@ class EspecieAnimalAdmin(admin.ModelAdmin):
         'nome_popular',
         'classe',
         )
-    sear
+    search_fields = []
 
 admin.site.register(EspecieAnimal, EspecieAnimalAdmin)
 
@@ -29,21 +31,21 @@ class LocalResgateAdmin(admin.ModelAdmin):
     list_display = (
         'municipio',
         'endereco',
-        'area_resgate'
+        'area_resgate',
         'longitude',
         'latitude',
         )
     list_filter = (
         'municipio',
         'endereco',
-        'area_resgate'
+        'area_resgate',
         # 'longitude',
         # 'latitude',
         )
     ordering = (
         'municipio',
         'endereco',
-        'area_resgate'
+        'area_resgate',
         # 'longitude',
         # 'latitude',
         )   
@@ -91,7 +93,7 @@ class RelatorioAnimalAdmin(admin.ModelAdmin):
     list_filter = (
         'local_resgate__municipio',
         'local_resgate__endereco',
-        'local_resgate__area_resgate',
+        # 'local_resgate__area_resgate',
         # 'local_resgate__longitude',
         # 'local_resgate__latitude',
         'bo',
