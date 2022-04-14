@@ -24,7 +24,7 @@ class EspecieAnimal(BaseModel):
         verbose_name_plural = 'Especie dos Animais'
 
     def __str__(self):
-        return (f"Grupo: {self.grupo} \n"
+        return (f"Grupo: {self.classe} \n"
                 f"Nome Ciêntificao: {self.nome_cientifico} \n"
                 f"Nome Popular: {self.nome_popular}")
 

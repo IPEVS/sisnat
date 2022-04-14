@@ -6,6 +6,8 @@ from animal.models import *
 class ChoiceAdmin(admin.ModelAdmin):
     autocomplete_fields = []
 
+
+@admin.register(EspecieAnimal)
 class EspecieAnimalAdmin(admin.ModelAdmin):
     list_display = (
         'nome_cientifico',
@@ -23,8 +25,6 @@ class EspecieAnimalAdmin(admin.ModelAdmin):
         'classe',
         )
     search_fields = []
-
-admin.site.register(EspecieAnimal, EspecieAnimalAdmin)
 
 
 class LocalResgateAdmin(admin.ModelAdmin):
@@ -131,7 +131,16 @@ class DoadorAdmin(admin.ModelAdmin):
 admin.site.register(Doador, DoadorAdmin)
 
 
+class FichaClinicaInline(admin.StackedInline):
+    model = FichaClinica
+
+
+admin.site.register(FichaClinica)
+
+
+@admin.register(Animal)
 class AnimalAdmin(admin.ModelAdmin):
+    inlines = [FichaClinicaInline]
     list_display = (
         'especie',
         # 'imagem_animal',
@@ -176,7 +185,6 @@ class AnimalAdmin(admin.ModelAdmin):
 
         ]
 
-admin.site.register(Animal, AnimalAdmin)
 
 
 class FichaClinicaAdmin(admin.ModelAdmin):
@@ -190,14 +198,13 @@ class FichaClinicaAdmin(admin.ModelAdmin):
         'animal__data_entrada',
         'data_procedimento',
         # 'procedimento',
-        ) 
+        )
     ordering = (
         'animal',
         'data_procedimento',
         # 'procedimento',
-        )  
+        )
 
-admin.site.register(FichaClinica, FichaClinicaAdmin)
 
 
 class AlimentacaoAdmin(admin.ModelAdmin):
