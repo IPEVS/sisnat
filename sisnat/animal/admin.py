@@ -123,18 +123,23 @@ admin.site.register(EspecieAnimal, EspecieAnimalAdmin)
 
 class FichaClinicaInline(admin.StackedInline):
     model = FichaClinica
+    extra = 1
 
 class AlimentacaoInline(admin.StackedInline):
     model = Alimentacao
+    extra = 1
 
 class ObservacaoInline(admin.StackedInline):
     model = Observacao
+    extra = 1
 
 class EcdiseInline(admin.StackedInline):
     model = Ecdise
+    extra = 1
 
 class MorfometriaInline(admin.StackedInline):
     model = Morfometria
+    extra = 1
 
 class AnimalAdmin(admin.ModelAdmin):
     inlines = [
