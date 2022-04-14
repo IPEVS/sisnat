@@ -51,3 +51,7 @@
 .module > h3 {
     display: none;
 }
+
+div.add-row > a {
+    background-color: #48704c;
+}
