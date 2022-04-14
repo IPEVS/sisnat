@@ -143,14 +143,34 @@ JAZZMIN_SETTINGS = {
     "welcome_sign": "Bem-vindo ao Sisnat",
     "copyright": "IPEVS & UENP",
     "user_avatar": None,
+    
+    #############
+    # Side Menu #
+    #############
+    # Whether to display the side menu
+    "show_sidebar": True,
+    # Whether to aut expand the menu
+    "navigation_expanded": False,
+
+    # Icons that are used when one is not manually specified
+    "default_icon_parents": "fas fa-chevron-circle-right",
+    "default_icon_children": "fas fa-paw",
+
+    #################
+    # Related Modal #
+    #################
+    # Use modals instead of popups
+    "related_modal_active": False,
+
     #############
     # UI Tweaks #
     #############
     # Relative paths to custom CSS/JS scripts (must be present in static files)
     "custom_css": "css/main.css",
     "custom_js": "js/main.js",
-    # Whether to show the UI customizer on the sidebar
+
     "show_ui_builder": True,
+
     ###############
     # Change view #
     ###############
@@ -160,9 +180,11 @@ JAZZMIN_SETTINGS = {
     # - vertical_tabs
     # - collapsible
     # - carousel
-    "changeform_format": "vertical_tabs",
+    "changeform_format": "horizontal_tabs",
     # override change forms on a per modeladmin basis
     "changeform_format_overrides": {"auth.user": "collapsible", "auth.group": "vertical_tabs"},
+    # Add a language dropdown into the admin
+    # "language_chooser": True,
 }
 JAZZMIN_UI_TWEAKS = {
     "theme": "minty",
