@@ -1,5 +1,7 @@
 **/__pycache__
-
 .idea
-ve39
+
+**/.env
 db.sqlite3
+
+ve39

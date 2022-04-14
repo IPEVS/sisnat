@@ -12,6 +12,14 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 import os
 from pathlib import Path
 
+from dotenv import find_dotenv, load_dotenv
+from environs import Env
+
+
+env = Env()
+load_dotenv(find_dotenv())
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,14 +28,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-t+o@-hzpzp*i=&3&)46$38-*$n-3&1$@v*lko(4b*4bhiwnj(i'
+SECRET_KEY = env.str('SECRET_KEY', 'django-insecure-t+o@-hzpzp*i=&3&)4')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env.bool('DEBUG', True)
 
-ALLOWED_HOSTS = []
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-MEDIA_ROOT =  os.path.join(BASE_DIR, 'media') 
+ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", ("localhost", "0.0.0.0"))
 
 # Application definition
 
@@ -58,9 +64,7 @@ ROOT_URLCONF = 'sisnat.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            os.path.join(BASE_DIR, 'templates')
-        ],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -82,8 +86,7 @@ WSGI_APPLICATION = 'sisnat.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': BASE_DIR / 'db.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -122,11 +125,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL = '/static/'
+STATIC_ROOT = 'static'
 
-MEDIA_URL = 'media/'
-MEDIA_ROOT =  os.path.join(BASE_DIR, 'media') 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = 'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -190,3 +193,5 @@ JAZZMIN_UI_TWEAKS = {
     "theme": "minty",
     "dark_mode_theme": None,
 }
+
+APPEND_SLASH = True
