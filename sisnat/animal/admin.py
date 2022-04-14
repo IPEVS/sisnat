@@ -1,13 +1,103 @@
-from django.contrib import admin
+from animal.models import EspecieAnimal, LocalResgate, OrigemAnimal, MotivoResgate, RelatorioAnimal, Doador, FichaClinica, Alimentacao, Observacao, Ecdise, Morfometria, Animal
+# from animal.models import *
+
 from django.shortcuts import render, redirect, HttpResponse
-   
-from animal.models import *
-
-class ChoiceAdmin(admin.ModelAdmin):
-    autocomplete_fields = []
+from django.contrib import admin
 
 
-@admin.register(EspecieAnimal)
+
+class LocalResgateAdmin(admin.ModelAdmin):
+    list_display = (
+        'municipio',
+        'endereco',
+        'area_resgate',
+        'longitude',
+        'latitude',
+        )
+    list_filter = (
+        'municipio',
+        'endereco',
+        'area_resgate',
+        )
+    ordering = (
+        'municipio',
+        'endereco',
+        'area_resgate',
+        )
+    search_fields = [
+        'municipio', 
+        'endereco', 
+        'area_resgate',
+        ]  
+admin.site.register(LocalResgate, LocalResgateAdmin)
+
+class OrigemAnimalAdmin(admin.ModelAdmin):
+    list_display = (
+        'descricao',
+        )
+    ordering = (
+        'descricao',
+        )
+    search_fields = [
+        'descricao'
+        ]
+admin.site.register(OrigemAnimal, OrigemAnimalAdmin)
+
+class MotivoResgateAdmin(admin.ModelAdmin):
+    list_display = (
+        'descricao',
+        )
+    ordering = (
+        'descricao',
+        )
+    search_fields = [
+        'descricao'
+        ]
+admin.site.register(MotivoResgate, MotivoResgateAdmin)
+
+class RelatorioAnimalAdmin(admin.ModelAdmin):
+    list_display = (
+        'local_resgate',
+        'bo',
+        'termo_destinacao',
+        )
+    list_filter = (
+        'local_resgate__municipio',
+        'local_resgate__endereco',
+        'bo',
+        'termo_destinacao',
+        )
+    ordering = (
+        'local_resgate',
+        'bo',
+        'termo_destinacao',
+        )
+    search_fields = [
+        'local_resgate', 
+        'bo',
+        'termo_destinacao',
+        ]
+admin.site.register(RelatorioAnimal, RelatorioAnimalAdmin)
+
+class DoadorAdmin(admin.ModelAdmin):
+    list_display = (
+        'nome',
+        'telefone',
+        )
+    list_filter = (
+        'nome',
+        'telefone',
+        )
+    ordering = (
+        'nome',
+        'telefone',
+        )
+    search_fields = [
+        'nome', 
+        'telefone',
+        ]
+admin.site.register(Doador, DoadorAdmin)
+
 class EspecieAnimalAdmin(admin.ModelAdmin):
     list_display = (
         'nome_cientifico',
@@ -24,136 +114,47 @@ class EspecieAnimalAdmin(admin.ModelAdmin):
         'nome_popular',
         'classe',
         )
-    search_fields = ['nome_popular']
-
-
-class LocalResgateAdmin(admin.ModelAdmin):
-    list_display = (
-        'municipio',
-        'endereco',
-        'area_resgate',
-        'longitude',
-        'latitude',
-        )
-    list_filter = (
-        'municipio',
-        'endereco',
-        'area_resgate',
-        # 'longitude',
-        # 'latitude',
-        )
-    ordering = (
-        'municipio',
-        'endereco',
-        'area_resgate',
-        # 'longitude',
-        # 'latitude',
-        )   
-
-admin.site.register(LocalResgate, LocalResgateAdmin)
-
-
-class OrigemAnimalAdmin(admin.ModelAdmin):
-    list_display = (
-        'descricao',
-        )
-    # list_filter = (
-    #     'descricao',
-    #     )
-    ordering = (
-        'descricao',
-        )
-
-admin.site.register(OrigemAnimal, OrigemAnimalAdmin)
-
-
-class MotivoResgateAdmin(admin.ModelAdmin):
-    list_display = (
-        'descricao',
-        )
-    # list_filter = (
-    #     'descricao',
-    #     )
-    ordering = (
-        'descricao',
-        )
-
-admin.site.register(MotivoResgate, MotivoResgateAdmin)
-
-
-class RelatorioAnimalAdmin(admin.ModelAdmin):
-    list_display = (
-        'local_resgate',
-        'bo',
-        'termo_destinacao',
-        # 'origem',
-        # 'motivo',
-        # 'soltura',
-        )
-    list_filter = (
-        'local_resgate__municipio',
-        'local_resgate__endereco',
-        # 'local_resgate__area_resgate',
-        # 'local_resgate__longitude',
-        # 'local_resgate__latitude',
-        'bo',
-        'termo_destinacao',
-        # 'origem__descricao',
-        # 'motivo__descricao',
-        # 'soltura',
-        )
-    ordering = (
-        'local_resgate',
-        'bo',
-        'termo_destinacao',
-        # 'origem',
-        # 'motivo',
-        # 'soltura',
-        )
-
-admin.site.register(RelatorioAnimal, RelatorioAnimalAdmin)
-
-
-class DoadorAdmin(admin.ModelAdmin):
-    list_display = (
-        'nome',
-        'telefone',
-        )
-    list_filter = (
-        'nome',
-        'telefone',
-        )
-    ordering = (
-        'nome',
-        'telefone',
-        )
-
-admin.site.register(Doador, DoadorAdmin)
-
+    search_fields = [
+        'nome_popular', 
+        'classe', 
+        'nome_cientifico',
+        ]
+admin.site.register(EspecieAnimal, EspecieAnimalAdmin)
 
 class FichaClinicaInline(admin.StackedInline):
     model = FichaClinica
 
+class AlimentacaoInline(admin.StackedInline):
+    model = Alimentacao
 
-admin.site.register(FichaClinica)
+class ObservacaoInline(admin.StackedInline):
+    model = Observacao
 
+class EcdiseInline(admin.StackedInline):
+    model = Ecdise
 
-@admin.register(Animal)
+class MorfometriaInline(admin.StackedInline):
+    model = Morfometria
+
 class AnimalAdmin(admin.ModelAdmin):
-    inlines = [FichaClinicaInline]
-    autocomplete_fields = ['especie']
+    inlines = [
+        AlimentacaoInline,
+        FichaClinicaInline,
+        ObservacaoInline,
+        EcdiseInline,
+        MorfometriaInline,
+        ]
+    autocomplete_fields = [
+        'especie',
+        'relatorio',
+        'doador',
+        ]
     list_display = (
         'especie',
-        # 'imagem_animal',
         'codigo_interno',
         'data_entrada',
-        # 'data_nascimento',
-        # 'sexo',
-        # 'faixa_etaria',
         'condicao_fisica',
         'esta_vivo',
-        # 'relatorio',
-        # 'doador',
         )
     list_filter = (
         'especie__classe',
@@ -162,150 +163,17 @@ class AnimalAdmin(admin.ModelAdmin):
         'codigo_interno',
         'data_entrada',
         'data_nascimento',
-        # 'sexo',
-        # 'faixa_etaria',
         'condicao_fisica',
         'esta_vivo',
-        # 'relatorio',
-        # 'doador',
         )
     ordering = (
         'especie',
-        # 'imagem_animal',
         'codigo_interno',
         'data_entrada',
-        # 'data_nascimento',
-        # 'sexo',
-        # 'faixa_etaria',
         'condicao_fisica',
         'esta_vivo',
-        # 'relatorio',
-        # 'doador',
         )
     actions = [
 
         ]
-
-
-
-class FichaClinicaAdmin(admin.ModelAdmin):
-    list_display = (
-        'animal',
-        'data_procedimento',
-        # 'procedimento',
-        )
-    list_filter = (
-        'animal__codigo_interno',
-        'animal__data_entrada',
-        'data_procedimento',
-        # 'procedimento',
-        )
-    ordering = (
-        'animal',
-        'data_procedimento',
-        # 'procedimento',
-        )
-
-
-
-class AlimentacaoAdmin(admin.ModelAdmin):
-    list_display = (
-        'animal',
-        'data_alimentacao',
-        )
-    list_filter = (
-        'animal__codigo_interno',
-        'animal__data_entrada',
-        'data_alimentacao',
-        # 'alimento',
-        # 'quantidade',
-        # 'sobra',
-        )
-    ordering = (
-        'animal',
-        'data_alimentacao',
-        # 'procedimento',
-        )  
-
-admin.site.register(Alimentacao, AlimentacaoAdmin)
-
-
-class ObservacaoAdmin(admin.ModelAdmin):
-    list_display = (
-        'animal',
-        'data_observacao',
-        )
-    list_filter = (
-        'animal__codigo_interno',
-        'animal__data_entrada',
-        'data_observacao',
-        )
-    ordering = (
-        'animal',
-        'data_observacao',
-        # 'procedimento',
-        ) 
-
-admin.site.register(Observacao, ObservacaoAdmin)
-
-
-class EcdiseAdmin(admin.ModelAdmin):
-    list_display = (
-        'animal',
-        'classe',  
-        'data_ecdise',
-        'ecdise',
-        # 'imagem_ecdise',
-        )
-    list_filter = (
-        'animal__codigo_interno',
-        'animal__data_entrada',
-        'classe',
-        'data_ecdise',
-        'ecdise',
-        )
-    ordering = (
-        'animal', 
-        'classe', 
-        'data_ecdise',
-        'ecdise',
-        )
-
-admin.site.register(Ecdise, EcdiseAdmin)
-
-
-class MorfometriaAdmin(admin.ModelAdmin):
-    list_display = (
-        'animal',
-        'classe',
-        'data_medicao',
-        )
-    list_filter = (
-        'animal__codigo_interno',
-        'animal__data_entrada',
-        'classe',
-        'data_medicao',
-        # 'cc',
-        # 'cf',
-        # 'cp',
-        # 'cpp',
-        # 'crc',
-        # 'ct',
-        # 'cta',
-        # 'don',
-        # 'peso',
-        # 'ca',
-        # 'cb',
-        # 'h',
-        # 'cm',
-        # 'cra',
-        # 'ho',
-        # 'observacao',
-        )
-    ordering = (
-        'animal',
-        'classe',
-        'data_medicao',
-        )
-
-admin.site.register(Morfometria, MorfometriaAdmin)
+admin.site.register(Animal, AnimalAdmin)
