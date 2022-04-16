@@ -60,12 +60,14 @@ class LocalResgate(BaseModel):
         blank=True,
         null=True,
         )
+
     def __str__(self):
         return (f"Município: {self.municipio} \n"
                 f"Endereço: {self.endereco} \n")
                 # f"Área do resgate: {self.area_resgate} \n"
                 # f"Logitude: {self.longitude} | "
                 # f"Latitude: {self.latitude}")
+
     class Meta:
         verbose_name = 'Local do Resgate'
         verbose_name_plural = 'Locais do Resgate'
@@ -76,8 +78,10 @@ class OrigemAnimal(BaseModel):
         max_length=50,
         verbose_name='Descrição',
         )
+
     def __str__(self):
         return (f"{self.descricao} \n")
+
     class Meta:
         verbose_name = 'Origem do Animal'
         verbose_name_plural = 'Origem do Animais'
@@ -88,8 +92,10 @@ class MotivoResgate(BaseModel):
         max_length=80,
         verbose_name='Descrição',
         )
+
     def __str__(self):
         return (f"{self.descricao} \n")
+
     class Meta:
         verbose_name = 'Motivo'
         verbose_name_plural = 'Motivos'
@@ -139,6 +145,7 @@ class RelatorioAnimal(BaseModel):
     class Meta:
         verbose_name = 'Relatório do Animal'
         verbose_name_plural = 'Relatórios dos Animais'
+
 
 class Doador(BaseModel):
     nome = models.CharField(

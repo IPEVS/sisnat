@@ -1,0 +1,26 @@
+{% extends "base_bootstrap.html" %}
+
+{% block title %}Relatórios de Controle{% endblock %}
+
+{% block body %}
+    <div>
+        <h1>Gerado em: {{ generated_at }}</h1>
+    </div>
+
+    <div>
+    <h1>Pritando todos animals sem formatação</h1>
+    {{ animals }}
+    </div>
+
+    <div>
+    <h1>Exemplo de for-loop</h1>
+    <ul class="list-group">
+        {% for animal in animals %}
+            <li class="list-group-item disabled"
+                aria-disabled="true">
+                Id do animal: {{ animal.id }}
+            </li>
+        {% endfor %}
+    </ul>
+    </div>
+{% endblock %}

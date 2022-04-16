@@ -1,11 +1,9 @@
-from animal.models import EspecieAnimal, LocalResgate, OrigemAnimal, MotivoResgate, RelatorioAnimal, Doador, FichaClinica, Alimentacao, Observacao, Ecdise, Morfometria, Animal
-from animal.actions import animal_morto, imprimir_relatorio
-# from animal.models import *
-
 from django.contrib import admin
 
+from animal import actions, models
 
 
+@admin.register(models.LocalResgate)
 class LocalResgateAdmin(admin.ModelAdmin):
     list_display = (
         'municipio',
@@ -28,9 +26,10 @@ class LocalResgateAdmin(admin.ModelAdmin):
         'municipio', 
         'endereco', 
         'area_resgate',
-        ]  
-admin.site.register(LocalResgate, LocalResgateAdmin)
+        ]
 
+
+@admin.register(models.OrigemAnimal)
 class OrigemAnimalAdmin(admin.ModelAdmin):
     list_display = (
         'descricao',
@@ -41,8 +40,9 @@ class OrigemAnimalAdmin(admin.ModelAdmin):
     search_fields = [
         'descricao'
         ]
-admin.site.register(OrigemAnimal, OrigemAnimalAdmin)
 
+
+@admin.register(models.MotivoResgate)
 class MotivoResgateAdmin(admin.ModelAdmin):
     list_display = (
         'descricao',
@@ -53,8 +53,9 @@ class MotivoResgateAdmin(admin.ModelAdmin):
     search_fields = [
         'descricao'
         ]
-admin.site.register(MotivoResgate, MotivoResgateAdmin)
 
+
+@admin.register(models.RelatorioAnimal)
 class RelatorioAnimalAdmin(admin.ModelAdmin):
     list_display = (
         'local_resgate',
@@ -77,8 +78,9 @@ class RelatorioAnimalAdmin(admin.ModelAdmin):
         'bo',
         'termo_destinacao',
         ]
-admin.site.register(RelatorioAnimal, RelatorioAnimalAdmin)
 
+
+@admin.register(models.Doador)
 class DoadorAdmin(admin.ModelAdmin):
     list_display = (
         'nome',
@@ -96,8 +98,9 @@ class DoadorAdmin(admin.ModelAdmin):
         'nome', 
         'telefone',
         ]
-admin.site.register(Doador, DoadorAdmin)
 
+
+@admin.register(models.EspecieAnimal)
 class EspecieAnimalAdmin(admin.ModelAdmin):
     list_display = (
         'nome_cientifico',
@@ -119,28 +122,34 @@ class EspecieAnimalAdmin(admin.ModelAdmin):
         'classe', 
         'nome_cientifico',
         ]
-admin.site.register(EspecieAnimal, EspecieAnimalAdmin)
+
 
 class FichaClinicaInline(admin.StackedInline):
-    model = FichaClinica
+    model = models.FichaClinica
     extra = 1
+
 
 class AlimentacaoInline(admin.StackedInline):
-    model = Alimentacao
+    model = models.Alimentacao
     extra = 1
+
 
 class ObservacaoInline(admin.StackedInline):
-    model = Observacao
+    model = models.Observacao
     extra = 1
+
 
 class EcdiseInline(admin.StackedInline):
-    model = Ecdise
+    model = models.Ecdise
     extra = 1
+
 
 class MorfometriaInline(admin.StackedInline):
-    model = Morfometria
+    model = models.Morfometria
     extra = 1
 
+
+@admin.register(models.Animal)
 class AnimalAdmin(admin.ModelAdmin):
     inlines = [
         AlimentacaoInline,
@@ -179,7 +188,6 @@ class AnimalAdmin(admin.ModelAdmin):
         'esta_vivo',
         )
     actions = [
-        animal_morto,
-        imprimir_relatorio
+        actions.animal_morto,
+        actions.imprimir_relatorio
         ]
-admin.site.register(Animal, AnimalAdmin)
