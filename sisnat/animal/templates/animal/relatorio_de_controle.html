@@ -3,24 +3,233 @@
 {% block title %}Relatórios de Controle{% endblock %}
 
 {% block body %}
-    <div>
-        <h1>Gerado em: {{ generated_at }}</h1>
-    </div>
 
-    <div>
+<!-- <div>
     <h1>Pritando todos animals sem formatação</h1>
     {{ animals }}
-    </div>
+</div> -->
 
-    <div>
-    <h1>Exemplo de for-loop</h1>
+<div class="container">
     <ul class="list-group">
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+                <img src="../../../static/images/logoSISNAT_circle.png" alt="SISNAT LOGO" width="60" height="60" class="">
+                <h1 class="titulo-h1 d-flex justify-content-center">Relatório dos Animais</h1>
+            </div>
+            <div class="col-12 d-flex justify-content-center">
+                <h4>Gerado em: {{ generated_at }}</h4>
+            </div>
+        </div>
         {% for animal in animals %}
-            <li class="list-group-item disabled"
-                aria-disabled="true">
-                Id do animal: {{ animal.id }}
-            </li>
+            <div class="div-for">
+                <div class="row">
+                    <li class="list-group-item disabled col-12" aria-disabled="true">
+                        <h2>
+                            Código do animal: {{ animal.codigo_interno }}
+                        </h2>
+                    </li>
+                    <!-- <li class="list-group-item disabled col-12" aria-disabled="true">
+                        ID do animal: {{ animal.id }}
+                    </li> -->
+                    <li class="list-group-item disabled col-12" aria-disabled="true"></li>
+                </div>
+                <div class="row">
+                    <li class="list-group-item disabled col-3" aria-disabled="true">
+                        Grupo: {{ animal.especie.classe }}
+                    </li>
+                    <li class="list-group-item disabled col-5" aria-disabled="true">
+                        Nome Científico: {{ animal.especie.nome_cientifico }}
+                    </li>
+                    <li class="list-group-item disabled col-4" aria-disabled="true">
+                        Nome Popular: {{ animal.especie.nome_popular }}
+                    </li>
+                    <li class="list-group-item disabled col-12" aria-disabled="true"></li>
+                </div>
+                <div class="row">
+                    <li class="list-group-item disabled col-4" aria-disabled="true">
+                        Entrada: {{ animal.data_entrada}}
+                    </li>
+                    <li class="list-group-item disabled col-5" aria-disabled="true">
+                        Nascimento: {{ animal.data_nascimento }}
+                    </li>
+                    <li class="list-group-item disabled col-3" aria-disabled="true">
+                        Sexo: {{ animal.sexo }}
+                    </li>
+                    <li class="list-group-item disabled col-4" aria-disabled="true">
+                        Faixa etária: {{ animal.faixa_etaria }}
+                    </li>
+                    <li class="list-group-item disabled col-4" aria-disabled="true">
+                        Condição Física: {{ animal.condicao_fisica }}
+                    </li>
+                    {% if animal.esta_vivo %}
+                        <li class="list-group-item disabled col-4" aria-disabled="true">
+                            O animal está vivo?: Sim
+                        </li>
+                    {% else %}
+                        <li class="list-group-item disabled col-4" aria-disabled="true">
+                            O animal está vivo?: Não
+                        </li>
+                    {% endif %}
+                    <li class="list-group-item disabled col-12" aria-disabled="true"></li>
+                </div>
+                <div class="row">
+                    {% for alimentacao in animal.alimentacao %}
+                        <li class="list-group-item disabled col-5" aria-disabled="true">
+                            Data alimentação: {{ alimentacao.data_alimentacao }}
+                        </li>
+                        <li class="list-group-item disabled col-4" aria-disabled="true">
+                            Unidade de medida: {{ alimentacao.unidade_de_medida }}
+                        </li>
+                        <li class="list-group-item disabled col-3" aria-disabled="true">
+                            Quantidade: {{ alimentacao.quantidade }}
+                        </li>
+                        <li class="list-group-item disabled col-6" aria-disabled="true">
+                            Alimento: {{ alimentacao.alimento }}
+                        </li>
+                        <li class="list-group-item disabled col-6" aria-disabled="true">
+                            Sobra: {{ alimentacao.sobra }}
+                        </li>
+                        <li class="list-group-item disabled col-12" aria-disabled="true"></li>
+                    {% endfor %}
+                </div>
+                <div class="row">
+                    {% for ficha in animal.fichas_clinicas %}
+                    <li class="list-group-item disabled col-5" aria-disabled="true">
+                        Data procedimento: {{ ficha.data_procedimento }}
+                    </li>
+                    <li class="list-group-item disabled col-7" aria-disabled="true">
+                        Procedimento: {{ ficha.procedimento }}
+                    </li>
+                    <li class="list-group-item disabled col-12" aria-disabled="true"></li>
+                    {% endfor %}
+                </div>
+                <div class="row">
+                    {% for observacoes in animal.observacoes %}
+                    <li class="list-group-item disabled col-5" aria-disabled="true">
+                        Data observação: {{ observacoes.data_observacao }}
+                    </li>
+                    <li class="list-group-item disabled col-7" aria-disabled="true">
+                        Observação: {{ observacoes.observacao }}
+                    </li>
+                    <li class="list-group-item disabled col-12" aria-disabled="true"></li>
+                    {% endfor %}
+                </div>
+                <div class="row">
+                        {% for ecdises in animal.ecdises %}
+                        <li class="list-group-item disabled col-3" aria-disabled="true">
+                            Classe: {{ ecdises.classe }}
+                        </li>
+                        <li class="list-group-item disabled col-6" aria-disabled="true">
+                            Data ecdise: {{ ecdises.data_ecdise }}
+                        </li>
+                        <li class="list-group-item disabled col-3" aria-disabled="true">
+                        Ecdise: {{ ecdises.ecdise }}
+                        </li>
+                        <li class="list-group-item disabled col-12" aria-disabled="true"></li>
+                    {% endfor %}
+                </div>
+                <div class="row">
+                    {% for morfometrias in animal.morfometrias %}
+                        <li class="list-group-item disabled col-3" aria-disabled="true">
+                            Classe: {{ morfometrias.classe }}
+                        </li>
+                        <li class="list-group-item disabled col-5" aria-disabled="true">
+                            Data medição: {{ morfometrias.data_medicao }}
+                        </li>
+                        <li class="list-group-item disabled col-4" aria-disabled="true">
+                            Comprimento da calda: {{ morfometrias.cc }}
+                        </li>
+                        <li class="list-group-item disabled col-2" aria-disabled="true">
+                            Cf: {{ morfometrias.cf }}
+                        </li>
+                        <li class="list-group-item disabled col-2" aria-disabled="true">
+                            Cp: {{ morfometrias.cp }}
+                        </li>
+                        <li class="list-group-item disabled col-2" aria-disabled="true">
+                            Cpp: {{ morfometrias.cpp }}
+                        </li>
+                        <li class="list-group-item disabled col-2" aria-disabled="true">
+                            Crc: {{ morfometrias.crc }}
+                        </li>
+                        <li class="list-group-item disabled col-2" aria-disabled="true">
+                            Ct: {{ morfometrias.ct }}
+                        </li>
+                        <li class="list-group-item disabled col-2" aria-disabled="true">
+                            Cta: {{ morfometrias.cta }}
+                        </li>
+                        <li class="list-group-item disabled col-2" aria-disabled="true">
+                            Don: {{ morfometrias.don }}
+                        </li>
+                        <li class="list-group-item disabled col-2" aria-disabled="true">
+                            Peso: {{ morfometrias.peso }}
+                        </li>
+                        <li class="list-group-item disabled col-2" aria-disabled="true">
+                            Ca: {{ morfometrias.ca }}
+                        </li>
+                        <li class="list-group-item disabled col-2" aria-disabled="true">
+                            Cb: {{ morfometrias.cb }}
+                        </li>
+                        <li class="list-group-item disabled col-2" aria-disabled="true">
+                            H: {{ morfometrias.h }}
+                        </li>
+                        <li class="list-group-item disabled col-2" aria-disabled="true">
+                            Cm: {{ morfometrias.cm }}
+                        </li>
+                        <li class="list-group-item disabled col-2" aria-disabled="true">
+                            Cra: {{ morfometrias.cra }}
+                        </li>
+                        <li class="list-group-item disabled col-2" aria-disabled="true">
+                            Ho: {{ morfometrias.ho }}
+                        </li>
+                        <li class="list-group-item disabled col-8" aria-disabled="true">
+                            Observação: {{ morfometrias.observacao }}
+                        </li>
+                        <li class="list-group-item disabled col-12" aria-disabled="true"></li>
+                    {% endfor %}
+                </div>
+                <div class="row">
+                    <li class="list-group-item disabled col-6" aria-disabled="true">
+                        Município: {{ animal.relatorio.local_resgate.municipio }}
+                    </li>
+                    <li class="list-group-item disabled col-6" aria-disabled="true">
+                    Endereço: {{ animal.relatorio.local_resgate.endereco }}
+                    </li>
+                    <li class="list-group-item disabled col-6" aria-disabled="true">
+                        Área Resgate: {{ animal.relatorio.local_resgate.area_resgate }}
+                    </li>
+                    <li class="list-group-item disabled col-3" aria-disabled="true">
+                        Logitude: {{ animal.relatorio.local_resgate.longitude }}
+                    </li>
+                    <li class="list-group-item disabled col-3" aria-disabled="true">
+                        Latitude: {{ animal.relatorio.local_resgate.latitude }}
+                    </li>
+                    <li class="list-group-item disabled col-6" aria-disabled="true">
+                        Boletim de ocorrência: {{ animal.relatorio.bo }}
+                    </li>
+                    <li class="list-group-item disabled col-6" aria-disabled="true">
+                        Termo de destinação: {{ animal.relatorio.termo_destinacao }}
+                    </li>
+                    <li class="list-group-item disabled col-6" aria-disabled="true">
+                        Origem: {{ animal.relatorio.origem.descricao }}
+                    </li>
+                    <li class="list-group-item disabled col-6" aria-disabled="true">
+                        Motivo: {{ animal.relatorio.motivo.descricao }}
+                    </li>
+                    <li class="list-group-item disabled col-12" aria-disabled="true">
+                        Soltura: {{ animal.relatorio.soltura }}
+                    </li>
+                    <li class="list-group-item disabled col-12" aria-disabled="true"></li>
+                </div>
+                <div class="row">
+                    <li class="list-group-item disabled col-6" aria-disabled="true">
+                        Nome do doador: {{ animal.doador.nome }}
+                    </li>
+                    <li class="list-group-item disabled col-6" aria-disabled="true">
+                        Telefone de contato do doador: {{ animal.doador.telefone }}
+                    </li>
+                </div> 
+            </div> 
         {% endfor %}
     </ul>
-    </div>
+</div>
 {% endblock %}

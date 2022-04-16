@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+{% load static %}
 
 <head>
-  <title>{% block title %}{% endblock %}</title>
-  {% load static %}
   {% block head %}{% endblock %}
   {% block head_css %}{% endblock %}
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="{% static 'images/logoSISNAT_circle.png' %}" type="image/x-icon">
+  <!-- CSS -->
+  <link rel="stylesheet" href="{% static 'css/relatorio.css' %}">
+  <title>{% block title %}{% endblock %}</title>
 </head>
 
 <body>
