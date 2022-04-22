@@ -1,0 +1,57 @@
+.sidebar,
+.brand-link {
+    background-color: #6aa570;
+}
+
+.elevation-3 {
+    border-radius: 50px;
+}
+
+.sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active, .sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active {
+    background-color: #48704c; 
+}
+
+.card-primary.card-outline {
+    border-top: 3px solid #6aa570;
+}
+
+.accent-primary .btn-link, .accent-primary .nav-tabs .nav-link, .accent-primary a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.btn) {
+    color: #48704c;
+}
+
+.accent-primary .btn-link:hover, .accent-primary .nav-tabs .nav-link:hover, .accent-primary a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.btn):hover {
+    color: #80c086;
+}
+
+.accent-primary .dropdown-item.active, .accent-primary .dropdown-item:active {
+    background-color: #6aa570;
+    color: #fff;
+}
+
+.btn-outline-primary {
+    color: #6aa570;
+    border-color: #6aa570; 
+}
+
+.btn-outline-primary:hover {
+    background-color: #48704c;
+    border-color: #48704c; 
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+    color: #fff;
+    text-decoration: none;
+    background-color: #48704c;
+}
+
+.timeline {
+    display: none;
+}
+
+.module > h3 {
+    display: none;
+}
+
+div.add-row > a {
+    background-color: #48704c;
+}

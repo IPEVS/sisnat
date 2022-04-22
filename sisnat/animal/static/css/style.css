@@ -1,0 +1,77 @@
+*, 
+*:after,
+*:before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 100%;
+    list-style-type: none;
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(180deg, #ffffff, #ffffff, #6aa570);
+}
+h1, h2, h3, h4, h5, h6 {
+    text-align: justify;
+}
+.btn-outline-primary-green {
+    text-decoration: none;
+    font-size: 20px;
+    color: #6aa570; 
+    border: 2px solid #6aa570;
+    background: #ffffff;
+    padding: 20px 100px; 
+    border-radius: 50px;
+    transition: 0.5s;
+}
+
+.btn-outline-primary-green:hover {
+    color: #ffffff; 
+    background-color: #48704c;
+    border-color: #48704c; 
+}
+
+.span-margin {
+    margin: 0px 4px;
+}
+
+.titulo-h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #6aa570;
+    margin-left: 10px; 
+}
+
+@media (max-width: 800px) {
+    .h6-col {
+        width: 100%;
+    }
+    .btn-outline-primary-green {
+        padding: 10px 80px;
+    }
+}
+@media (max-width: 700px) {
+    .logoIPEVS {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .section-flex {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        margin: 50px 0px 20px 50px;
+    }
+    .btn-outline-primary-green {
+        padding: 10px 60px;
+    }
+    .footer {
+        margin-top: 300px;
+    }
+}

@@ -1,0 +1,47 @@
+h1 {
+    font-size: 1rem;
+}
+
+h2 {
+    font-size: 0.6rem;
+    color: #000;
+}
+
+h4 {
+    font-size: 0.6rem;
+}
+
+ul {
+    font-size: 0.6rem;
+}
+li {
+    color: #000 !important;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.2rem;
+    }
+    
+    h2 {
+        font-size: 1rem;
+    }
+
+    h4 {
+        font-size: 0.7rem;
+    }
+    
+    ul {
+        font-size: 0.7rem;
+    }
+}
+
+.titulo-h1 {
+    align-items: center;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.div-for {
+    margin-bottom: 40px;
+}
