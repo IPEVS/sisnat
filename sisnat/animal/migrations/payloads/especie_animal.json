@@ -1,0 +1,467 @@
+[
+    {
+        "classe":"AMPHIBIA",
+        "nome_cientifico":"Phyllomedusa tetraploidea",
+        "nome_popular":"Perereca macaco"
+    },
+    {
+        "classe":"AMPHIBIA",
+        "nome_cientifico":"Rhinella diptycha",
+        "nome_popular":"Sapo cururu"
+    },
+    {
+        "classe":"ARACHNIDA",
+        "nome_cientifico":"Brachypelma albopilosum",
+        "nome_popular":"Aranha caranguejeira"
+    },
+    {
+        "classe":"ARACHNIDA",
+        "nome_cientifico":"Grammostola rosea",
+        "nome_popular":"Aranha caranguejeira"
+    },
+    {
+        "classe":"ARACHNIDA",
+        "nome_cientifico":"Vitalius roseus",
+        "nome_popular":"Aranha caranguejeira"
+    },
+    {
+        "classe":"ARACHNIDA",
+        "nome_cientifico":"Vitalius paranaensis",
+        "nome_popular":"Aranha caranguejeira"
+    },
+    {
+        "classe":"ARACHNIDA",
+        "nome_cientifico":"Tityus bahiensis",
+        "nome_popular":"Escorpiao marrom"
+    },
+    {
+        "classe":"ARACHNIDA",
+        "nome_cientifico":"Tityus serrulatus",
+        "nome_popular":"Escorpiao amarelo"
+    },
+    {
+        "classe":"AVES",
+        "nome_cientifico":"Theristicus caudatus",
+        "nome_popular":"Curicaca"
+    },
+    {
+        "classe":"AVES",
+        "nome_cientifico":"Falco sparverius",
+        "nome_popular":"Quiriquiri"
+    },
+    {
+        "classe":"AVES",
+        "nome_cientifico":"Porphyrio martinicus",
+        "nome_popular":"Frango d agua azul"
+    },
+    {
+        "classe":"AVES",
+        "nome_cientifico":"Zenaida auriculata",
+        "nome_popular":"Pomba"
+    },
+    {
+        "classe":"AVES",
+        "nome_cientifico":"Amazona amazonica",
+        "nome_popular":"Papagaio curica"
+    },
+    {
+        "classe":"AVES",
+        "nome_cientifico":"Asio clamator",
+        "nome_popular":"Coruja orelhuda"
+    },
+    {
+        "classe":"AVES",
+        "nome_cientifico":"Tyto furcata",
+        "nome_popular":"Coruja suindara"
+    },
+    {
+        "classe":"AVES",
+        "nome_cientifico":"Eupetomena macroura",
+        "nome_popular":"Beija flor"
+    },
+    {
+        "classe":"AVES",
+        "nome_cientifico":"Megascops choliba",
+        "nome_popular":"Coruja do mato"
+    },
+    {
+        "classe":"AVES",
+        "nome_cientifico":"Pitangus sulphuratus",
+        "nome_popular":"Bem te vi"
+    },
+    {
+        "classe":"AVES",
+        "nome_cientifico":"Ramphastos toco",
+        "nome_popular":"Tucano toco"
+    },
+    {
+        "classe":"AVES",
+        "nome_cientifico":"Athene cunicularia",
+        "nome_popular":"Coruja buraqueira"
+    },
+    {
+        "classe":"AVES",
+        "nome_cientifico":"Selenidera maculirostris",
+        "nome_popular":"Aracari poca"
+    },
+    {
+        "classe":"AVES",
+        "nome_cientifico":"Brotogeris chiriri",
+        "nome_popular":"Periquito da asa amarela"
+    },
+    {
+        "classe":"AVES",
+        "nome_cientifico":"Cariama cristata",
+        "nome_popular":"Seriema"
+    },
+    {
+        "classe":"AVES",
+        "nome_cientifico":"Buteo brachyurus",
+        "nome_popular":"Gaviao da cauda curta"
+    },
+    {
+        "classe":"AVES",
+        "nome_cientifico":"Caracara plancus",
+        "nome_popular":"Carcara"
+    },
+    {
+        "classe":"AVES",
+        "nome_cientifico":"Passer domesticus",
+        "nome_popular":"Pardal"
+    },
+    {
+        "classe":"AVES",
+        "nome_cientifico":"Columba livia",
+        "nome_popular":"Pomba"
+    },
+    {
+        "classe":"AVES",
+        "nome_cientifico":"Aramides saracura",
+        "nome_popular":"Saracura"
+    },
+    {
+        "classe":"AVES",
+        "nome_cientifico":"Nyctidromus albicollis",
+        "nome_popular":"Curiango"
+    },
+    {
+        "classe":"AVES",
+        "nome_cientifico":"Psittacara leucophythalmus",
+        "nome_popular":"Periquito maracana"
+    },
+    {
+        "classe":"AVES",
+        "nome_cientifico":"Melopsittacus undulatus",
+        "nome_popular":"Periquito australiano"
+    },
+    {
+        "classe":"AVES",
+        "nome_cientifico":"Streptoprocne zonaris",
+        "nome_popular":"Andorinhao "
+    },
+    {
+        "classe":"AVES",
+        "nome_cientifico":"Amazona aestiva",
+        "nome_popular":"Papagaio verdadeiro"
+    },
+    {
+        "classe":"AVES",
+        "nome_cientifico":"Rupornis magnirostris",
+        "nome_popular":"Gaviao carijo"
+    },
+    {
+        "classe":"AVES",
+        "nome_cientifico":"Andorinha",
+        "nome_popular":"Andorinha"
+    },
+    {
+        "classe":"AVES",
+        "nome_cientifico":"Saltator similis",
+        "nome_popular":"Trinca ferro"
+    },
+    {
+        "classe":"AVES",
+        "nome_cientifico":"Sporophila caerulescens",
+        "nome_popular":"Coleirinho"
+    },
+    {
+        "classe":"AVES",
+        "nome_cientifico":"Anser domesticus",
+        "nome_popular":"Ganso"
+    },
+    {
+        "classe":"AVES",
+        "nome_cientifico":"Pionus maximiliani",
+        "nome_popular":"Maitaca"
+    },
+    {
+        "classe":"AVES",
+        "nome_cientifico":"Celeus flAVEScens",
+        "nome_popular":"Pica pau da cabeca amarela"
+    },
+    {
+        "classe":"AVES",
+        "nome_cientifico":"Turdus leucomelas",
+        "nome_popular":"Sabia barranco"
+    },
+    {
+        "classe":"AVES",
+        "nome_cientifico":"Coragyps atratus",
+        "nome_popular":"Urubu"
+    },
+    {
+        "classe":"AVES",
+        "nome_cientifico":"Ramphastos dicolorus",
+        "nome_popular":"Tucano do bico verde"
+        },
+    {
+        "classe":"AVES",
+        "nome_cientifico":"Sicalis flaveola",
+        "nome_popular":"Canario da terra"
+    },
+    {
+        "classe":"AVES",
+        "nome_cientifico":"Cyanolixia brissonii",
+        "nome_popular":"Azulao"
+    },
+    {
+        "classe":"AVES",
+        "nome_cientifico":"Gnorimopsar chopi",
+        "nome_popular":"Passaro preto"
+    },
+    {
+        "classe":"AVES",
+        "nome_cientifico":"Turdus rufiventris",
+        "nome_popular":"Sabia"
+    },
+    {
+        "classe":"AVES",
+        "nome_cientifico":"Coryphospingus cucullatus",
+        "nome_popular":"Sangrinho"
+    },
+    {
+        "classe":"AVES",
+        "nome_cientifico":"Colaptes campestris",
+        "nome_popular":"Pica pau do campo"
+    },
+    {
+        "classe":"AVES",
+        "nome_cientifico":"Dendrocygna viduata",
+        "nome_popular":"Irere"
+    },
+    {
+        "classe":"AVES",
+        "nome_cientifico":"Progne chalybea",
+        "nome_popular":"Andorinha"
+    },
+    {
+        "classe":"MAMMALIA",
+        "nome_cientifico":"Leopardus guttulus",
+        "nome_popular":"Gato do mato"
+    },
+    {
+        "classe":"MAMMALIA",
+        "nome_cientifico":"Sapajus nigritus",
+        "nome_popular":"Macaco prego"
+    },
+    {
+        "classe":"MAMMALIA",
+        "nome_cientifico":"Didelphis albiventris",
+        "nome_popular":"Gamba"
+    },
+    {
+        "classe":"MAMMALIA",
+        "nome_cientifico":"Didelphis ",
+        "nome_popular":"Gamba"
+    },
+    {
+        "classe":"MAMMALIA",
+        "nome_cientifico":"Dasypus novemcinctus",
+        "nome_popular":"Tatu galinha"
+    },
+    {
+        "classe":"MAMMALIA",
+        "nome_cientifico":"Callithrix (hibrido Callithrix penicillata X Callithrix jacchus)",
+        "nome_popular":"Macaco sagui"
+    },
+    {
+        "classe":"MAMMALIA",
+        "nome_cientifico":"Lepus europaeus",
+        "nome_popular":"Lebre europeia"
+    },
+    {
+        "classe":"MAMMALIA",
+        "nome_cientifico":"Chiroptera",
+        "nome_popular":"Morcego"
+    },
+    {
+        "classe":"MAMMALIA",
+        "nome_cientifico":"Cerdocyon thous",
+        "nome_popular":"Cachorro do mato"
+    },
+    {
+        "classe":"MAMMALIA",
+        "nome_cientifico":"Myocastor coypus",
+        "nome_popular":"Ratao do banhado"
+    },
+    {
+        "classe":"MAMMALIA",
+        "nome_cientifico":"Callithrix  jacchus",
+        "nome_popular":"Sagui do tufo branco"
+    },
+    {
+        "classe":"MAMMALIA",
+        "nome_cientifico":"Tamandua tetradactyla",
+        "nome_popular":"Tamandua mirim"
+    },
+    {
+        "classe":"MAMMALIA",
+        "nome_cientifico":"Nasua nasua",
+        "nome_popular":"Quati"
+    },
+    {
+        "classe":"MAMMALIA",
+        "nome_cientifico":"Galictis cuja",
+        "nome_popular":"Furao"
+    },
+    {
+        "classe":"MAMMALIA",
+        "nome_cientifico":"Coendou (Sphiggurus) sp",
+        "nome_popular":"Ourico"
+    },
+    {
+        "classe":"REPTILIA",
+        "nome_cientifico":"Lampropeltis getula",
+        "nome_popular":"Cobra real"
+    },
+    {
+        "classe":"REPTILIA",
+        "nome_cientifico":"Epicrates crassus",
+        "nome_popular":"Salamanta"
+    },
+    {
+        "classe":"REPTILIA",
+        "nome_cientifico":"Python regius",
+        "nome_popular":"Piton bola"
+    },
+    {
+        "classe":"REPTILIA",
+        "nome_cientifico":"Bothrops moojeni",
+        "nome_popular":"Jararaca do cerrado"
+    },
+    {
+        "classe":"REPTILIA",
+        "nome_cientifico":"Pogona vitticeps",
+        "nome_popular":"Dragao barbado"
+    },
+    {
+        "classe":"REPTILIA",
+        "nome_cientifico":"Eublepharis macularius",
+        "nome_popular":"Lagartixa leopardo"
+    },
+    {
+        "classe":"REPTILIA",
+        "nome_cientifico":"Pituophis catenifer",
+        "nome_popular":"Cobra touro"
+    },
+    {
+        "classe":"REPTILIA",
+        "nome_cientifico":"Iguana iguana",
+        "nome_popular":"Iguana"
+    },
+    {
+        "classe":"REPTILIA",
+        "nome_cientifico":"Salvator rufescens",
+        "nome_popular":"Lagarto teiu vermelho"
+    },
+    {
+        "classe":"REPTILIA",
+        "nome_cientifico":"Boa constrictor constrictor",
+        "nome_popular":"Jiboia da amazonia"
+    },
+    {
+        "classe":"REPTILIA",
+        "nome_cientifico":"Boa constrictor amarali",
+        "nome_popular":"Jiboia do cerrado"
+    },
+    {
+        "classe":"REPTILIA",
+        "nome_cientifico":"Salvator merianae",
+        "nome_popular":"Lagarto teiu"
+    },
+    {
+        "classe":"REPTILIA",
+        "nome_cientifico":"Chelonoidis carbonaria",
+        "nome_popular":"Jabuti"
+    },
+    {
+        "classe":"REPTILIA",
+        "nome_cientifico":"Oxyrhopus guibei",
+        "nome_popular":"Falsa coral"
+    },
+    {
+        "classe":"REPTILIA",
+        "nome_cientifico":"Corallus hortulanus",
+        "nome_popular":"Suacuboia"
+    },
+    {
+        "classe":"REPTILIA",
+        "nome_cientifico":"Crotalus durissus terrificus",
+        "nome_popular":"Cascavel"
+    },
+    {
+        "classe":"REPTILIA",
+        "nome_cientifico":"Dipsas mikanii",
+        "nome_popular":"Dormideira"
+    },
+    {
+        "classe":"REPTILIA",
+        "nome_cientifico":"Notomabuya frenata",
+        "nome_popular":"Lagarto mabuya"
+    },
+    {
+        "classe":"REPTILIA",
+        "nome_cientifico":"Caiman latirostris",
+        "nome_popular":"Jacare do papo amarelo"
+    },
+    {
+        "classe":"REPTILIA",
+        "nome_cientifico":"Pantherophis guttatus",
+        "nome_popular":"Cobra do milho"
+    },
+    {
+        "classe":"REPTILIA",
+        "nome_cientifico":"Trachemys dorbigni",
+        "nome_popular":"Tartaruga tigre d agua"
+    },
+    {
+        "classe":"REPTILIA",
+        "nome_cientifico":"Trachemys scripta",
+        "nome_popular":"Tartaruga orelha vermelha"
+    },
+    {
+        "classe":"REPTILIA",
+        "nome_cientifico":"Philodryas olfersii",
+        "nome_popular":"Cobra cipo"
+    },
+    {
+        "classe":"REPTILIA",
+        "nome_cientifico":"Phrynops geoffroanus",
+        "nome_popular":"Cagado"
+    },
+    {
+        "classe":"REPTILIA",
+        "nome_cientifico":"Malayopython reticulatus",
+        "nome_popular":"Piton reticulada"
+    },
+    {
+        "classe":"REPTILIA",
+        "nome_cientifico":"Chelonoidis denticulata",
+        "nome_popular":"Jabuti tinga"
+    },
+    {
+        "classe":"REPTILIA",
+        "nome_cientifico":"Bothrops jararaca",
+        "nome_popular":"Jararaca"
+    }
+]

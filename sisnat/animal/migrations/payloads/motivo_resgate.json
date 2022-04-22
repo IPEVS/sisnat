@@ -1,0 +1,23 @@
+[
+    {
+        "descricao": "Animal resgatado pelo IPEVS"
+    },
+    {
+        "descricao": "Animal encaminhado para o IPEVS"
+    },
+    {
+        "descricao": "Animal retirado pelo IPEVS no local da solicitacao"
+    },
+    {
+        "descricao": "Animal encaminhado para o IPEVS atraves do Corpo de Bombeiros"
+    },
+    {
+        "descricao": "Animal encaminhado para o IPEVS atraves do IBAMA"
+    },
+    {
+        "descricao": "Animal encaminhado para o IPEVS atraves do IAT"
+    },
+    {
+        "descricao": "Animal encaminhado para o IPEVS atraves da Policia Ambiental"
+    }  
+]
