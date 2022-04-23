@@ -90,6 +90,15 @@ DATABASES = {
     }
 }
 
+if env.str("POSTGRES_USER", ""):
+    DATABASES["default"] = {
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": env.str("POSTGRES_DATABASE", "sisnatdb"),
+        "USER": env.str("POSTGRES_USER"),
+        "PASSWORD": env.str("POSTGRES_PASSWORD"),
+        "HOST": env.str("POSTGRES_HOST", "postgres-host"),
+        "PORT": env.int("POSTGRES_PORT", "5432"),
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators

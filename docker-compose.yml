@@ -1,0 +1,67 @@
+version: "3.7"
+
+services:
+
+  postgres:
+    build: postgres
+    ports:
+      - "5432"
+    env_file:
+      - ./postgres/.env
+    environment:
+      PGDATA: /var/lib/postgresql/data
+    volumes:
+      - /var/lib/postgresql/data
+      - ./local/docker/psql/bkp:/backup
+    restart: ${DOCKER_RESTART:-no}
+    networks:
+      - db-network
+
+  backend:
+    build: sisnat
+    ports:
+      - "${BACKEND_HOST_PORT}8000"
+    command: ${RUNSERVER:-/deploy/run.sh}
+    depends_on:
+      - postgres
+    links:
+      - postgres:postgres-host
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./:/deploy
+    env_file:
+      - ./postgres/.env
+    working_dir: /deploy/sisnat
+    restart: ${DOCKER_RESTART:-no}
+    networks:
+      - db-network
+      - backend-network
+
+  proxy:
+    build: proxy
+    restart: ${DOCKER_RESTART:-no}
+    depends_on:
+      - backend
+#    environment:
+#      VIRTUAL_HOST: sisnat.com
+#      VIRTUAL_HOST_ALIAS: sisnat.com,www.sisnat.com
+#      LETSENCRYPT_HOST: sisnat.com,www.sisnat.com
+#      LETSENCRYPT_EMAIL: benatto.luisfernando+sisnat@gmail.com
+    volumes:
+      - ./sisnat/static:/collectstatic
+      - ./sisnat/media:/mediafiles
+    ports:
+      - "${PROXY_HOST_PORT}80"
+    extra_hosts:
+      private-files.internal: 127.0.0.1
+    networks:
+      - backend-network
+      - nginx-gateway
+
+networks:
+  backend-network:
+  db-network:
+  nginx-gateway:
+    external:
+        name: nginx-gateway
