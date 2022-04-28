@@ -30,23 +30,9 @@ class EspecieAnimal(BaseModel):
 
 
 class LocalResgate(BaseModel):
-    longitude = models.FloatField(
-        max_length=12,
-        blank=True,
-        null=True,
-        verbose_name='Longitude',
-        )
-    latitude = models.FloatField(
-        max_length=12,
-        blank=True,
-        null=True,
-        verbose_name='Latitude',
-        )
     municipio = models.CharField(
         verbose_name='Município de origem',
         max_length=50,
-        blank=True,
-        null=True,
         )
     endereco = models.CharField(
         max_length=100,
@@ -59,6 +45,18 @@ class LocalResgate(BaseModel):
         max_length=50,
         blank=True,
         null=True,
+        )
+    longitude = models.FloatField(
+        max_length=12,
+        blank=True,
+        null=True,
+        verbose_name='Longitude',
+        )
+    latitude = models.FloatField(
+        max_length=12,
+        blank=True,
+        null=True,
+        verbose_name='Latitude',
         )
 
     def __str__(self):
@@ -266,13 +264,15 @@ class Alimentacao(BaseModel):
     alimento = models.CharField(
         max_length=200,
         verbose_name='Alimento'
-    )
+        )
     unidade_de_medida = models.CharField(
         verbose_name='Unidade de medida',
-        max_length=20,
+        choices=choices.UNIDADE_DE_MEDIDA_CHOICES,
+        default=choices.GRAMAS,
+        max_length=5,
         blank=True,
         null=True,
-    )
+        )
     quantidade = models.FloatField(
         blank=True,
         null=True,

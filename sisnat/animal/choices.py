@@ -53,3 +53,17 @@ ECDISE_CHOICES = [
     (COMPLETA, 'Completa'),
     (INCOMPLETA, 'Incompleta'),
 ]
+
+# Unidade de Media
+KG = 'kg'
+GRAMAS = 'g'
+MG = 'mg'
+LITROS = 'l'
+ML = 'ml'
+UNIDADE_DE_MEDIDA_CHOICES = [
+    (KG, 'kg'),
+    (GRAMAS, 'g'),
+    (MG, 'mg'),
+    (LITROS, 'l'),
+    (ML, 'ml'),
+]

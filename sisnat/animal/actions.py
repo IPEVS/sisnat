@@ -8,7 +8,7 @@ from core import utils
 from animal import models
 
 
-@admin.action(description="Trocar animal selecionado como MORTO")
+@admin.action(description="Trocar animais selecionados para morto")
 def animal_morto(modeladmin, request, queryset):
     queryset.update(esta_vivo=False)
 

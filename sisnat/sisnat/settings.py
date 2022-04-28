@@ -146,14 +146,14 @@ MEDIA_ROOT = 'media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 JAZZMIN_SETTINGS = {
-    "site_title": "Sisnat",
-    "site_header": "Sisnat",
-    "site_brand": "Sisnat",
+    "site_title": "SISNAT",
+    "site_header": "SISNAT",
+    "site_brand": "SISNAT",
     "site_logo": "images/logoSISNAT_circle.png",
     "site_logo_classes": "images/logoSISNAT_circle.png",
     "site_icon": "images/logoSISNAT_circle.png",
-    "welcome_sign": "Bem-vindo ao Sisnat",
-    "copyright": "IPEVS & UENP",
+    "welcome_sign": "Bem-vindo ao SISNAT",
+    "copyright": "SISNAT & IPEVS & UENP",
     "user_avatar": None,
     
     #############
