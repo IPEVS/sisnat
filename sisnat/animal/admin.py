@@ -12,11 +12,6 @@ class LocalResgateAdmin(admin.ModelAdmin):
         'longitude',
         'latitude',
         )
-    list_filter = (
-        'municipio',
-        'endereco',
-        'area_resgate',
-        )
     ordering = (
         'municipio',
         'endereco',
@@ -62,31 +57,22 @@ class RelatorioAnimalAdmin(admin.ModelAdmin):
         'bo',
         'termo_destinacao',
         )
-    list_filter = (
-        'local_resgate__municipio',
-        'local_resgate__endereco',
-        'bo',
-        'termo_destinacao',
-        )
     ordering = (
         'local_resgate',
         'bo',
         'termo_destinacao',
         )
     search_fields = [
-        'local_resgate', 
+        'local_resgate__municipio',
+        'local_resgate__endereco',
         'bo',
-        'termo_destinacao',
+        'termo_destinacao', 
         ]
 
 
 @admin.register(models.Doador)
 class DoadorAdmin(admin.ModelAdmin):
     list_display = (
-        'nome',
-        'telefone',
-        )
-    list_filter = (
         'nome',
         'telefone',
         )
@@ -108,8 +94,6 @@ class EspecieAnimalAdmin(admin.ModelAdmin):
         'classe',
         )
     list_filter = (
-        'nome_cientifico',
-        'nome_popular',
         'classe',
         )
     ordering = (
@@ -172,12 +156,8 @@ class AnimalAdmin(admin.ModelAdmin):
         )
     list_filter = (
         'especie__classe',
-        'especie__nome_popular',
-        'especie__nome_cientifico',
-        'codigo_interno',
         'data_entrada',
         'data_nascimento',
-        'condicao_fisica',
         'esta_vivo',
         )
     ordering = (
@@ -187,6 +167,14 @@ class AnimalAdmin(admin.ModelAdmin):
         'condicao_fisica',
         'esta_vivo',
         )
+    search_fields = [
+        'especie__classe',
+        'especie__nome_popular',
+        'especie__nome_cientifico',
+        'codigo_interno',
+        'condicao_fisica',
+        'esta_vivo',
+        ]
     actions = [
         actions.animal_morto,
         actions.imprimir_relatorio
