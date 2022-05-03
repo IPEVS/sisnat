@@ -1,4 +1,6 @@
+from django import forms
 from django.db import models
+from django.forms import ValidationError
 
 from core.models import BaseModel
 from animal import choices
@@ -24,9 +26,9 @@ class EspecieAnimal(BaseModel):
         verbose_name_plural = 'Especie dos Animais'
 
     def __str__(self):
-        return (f"Grupo: {self.classe} \n"
-                f"Nome Ciêntificao: {self.nome_cientifico} \n"
-                f"Nome Popular: {self.nome_popular}")
+        return (f"{self.classe} | "
+                f"{self.nome_cientifico} | "
+                f"{self.nome_popular}")
 
 
 class LocalResgate(BaseModel):
@@ -62,9 +64,6 @@ class LocalResgate(BaseModel):
     def __str__(self):
         return (f"Município: {self.municipio} \n"
                 f"Endereço: {self.endereco} \n")
-                # f"Área do resgate: {self.area_resgate} \n"
-                # f"Logitude: {self.longitude} | "
-                # f"Latitude: {self.latitude}")
 
     class Meta:
         verbose_name = 'Local do Resgate'
@@ -228,8 +227,8 @@ class Animal(BaseModel):
         verbose_name_plural = 'Animais'
 
     def __str__(self):
-        return (f"Cod: {self.codigo_interno} \n"
-                f"Data de entrada: {self.data_entrada}")
+        return (f"{self.especie.nome_popular}"
+                f" Cod: {self.codigo_interno}")
 
 
 class FichaClinica(BaseModel):
@@ -336,6 +335,24 @@ class Ecdise(BaseModel):
         verbose_name = 'Ecdise'
         verbose_name_plural = 'Ecdise'
 
+    # def clean(self):
+    #     classe_ = EspecieAnimal()
+    #     classe_animal = classe_.classe
+    #     classe = Ecdise()
+    #     classe_ecdise = classe.classe
+    #     if classe_animal != classe_ecdise:
+    #         raise ValidationError('As classe deve ser a mesma definida no animal!')
+    #     else:
+    #         return classe
+    # def clean(self):
+    #     cleaned_data = self.cleaned_data
+    #     classe_ecdise = cleaned_data.get('classe')
+    #     classe_animal = cleaned_data.get('EspecieAnimal.classe')
+    #     if classe_animal != classe_ecdise:
+    #         raise forms.ValidationError('As classe deve ser a mesma definida no animal!')
+    #     else:
+    #         return classe_animal
+
 
 class Morfometria(BaseModel):
     animal = models.ForeignKey(
@@ -435,3 +452,13 @@ class Morfometria(BaseModel):
     class Meta:
         verbose_name = 'Morfometria'
         verbose_name_plural = 'Morfometria'
+    
+    # def clean(self):
+    #     classe_ = EspecieAnimal()
+    #     classe_animal = classe_.classe
+    #     classe = Morfometria()
+    #     classe_morfometria = classe.classe
+    #     if classe_animal != classe_morfometria:
+    #         raise ValidationError('As classe deve ser a mesma definida no animal!')
+    #     else:
+    #         return classe_animal
