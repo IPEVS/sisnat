@@ -335,24 +335,6 @@ class Ecdise(BaseModel):
         verbose_name = 'Ecdise'
         verbose_name_plural = 'Ecdise'
 
-    # def clean(self):
-    #     classe_ = EspecieAnimal()
-    #     classe_animal = classe_.classe
-    #     classe = Ecdise()
-    #     classe_ecdise = classe.classe
-    #     if classe_animal != classe_ecdise:
-    #         raise ValidationError('As classe deve ser a mesma definida no animal!')
-    #     else:
-    #         return classe
-    # def clean(self):
-    #     cleaned_data = self.cleaned_data
-    #     classe_ecdise = cleaned_data.get('classe')
-    #     classe_animal = cleaned_data.get('EspecieAnimal.classe')
-    #     if classe_animal != classe_ecdise:
-    #         raise forms.ValidationError('As classe deve ser a mesma definida no animal!')
-    #     else:
-    #         return classe_animal
-
 
 class Morfometria(BaseModel):
     animal = models.ForeignKey(
@@ -452,13 +434,3 @@ class Morfometria(BaseModel):
     class Meta:
         verbose_name = 'Morfometria'
         verbose_name_plural = 'Morfometria'
-    
-    # def clean(self):
-    #     classe_ = EspecieAnimal()
-    #     classe_animal = classe_.classe
-    #     classe = Morfometria()
-    #     classe_morfometria = classe.classe
-    #     if classe_animal != classe_morfometria:
-    #         raise ValidationError('As classe deve ser a mesma definida no animal!')
-    #     else:
-    #         return classe_animal

@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from animal import actions, models
+from animal import actions, models, forms
 
 
 @admin.register(models.LocalResgate)
@@ -124,11 +124,13 @@ class ObservacaoInline(admin.StackedInline):
 
 
 class EcdiseInline(admin.StackedInline):
+    form = forms.EcdiseForm
     model = models.Ecdise
     extra = 1
 
 
 class MorfometriaInline(admin.StackedInline):
+    form = forms.MorfometriaForm
     model = models.Morfometria
     extra = 1
 
