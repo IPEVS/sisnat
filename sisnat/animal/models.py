@@ -80,8 +80,8 @@ class OrigemAnimal(BaseModel):
         return (f"{self.descricao} \n")
 
     class Meta:
-        verbose_name = 'Origem do Animal'
-        verbose_name_plural = 'Origem do Animais'
+        verbose_name = 'Origem'
+        verbose_name_plural = 'Origem'
 
 
 class MotivoResgate(BaseModel):
@@ -140,8 +140,8 @@ class RelatorioAnimal(BaseModel):
                 f"B.O.: {self.bo} \n"
                 f"Termo de destinação: {self.termo_destinacao}")
     class Meta:
-        verbose_name = 'Relatório do Animal'
-        verbose_name_plural = 'Relatórios dos Animais'
+        verbose_name = 'Relatório de Resgate'
+        verbose_name_plural = 'Relatórios de Resgate'
 
 
 class Doador(BaseModel):
