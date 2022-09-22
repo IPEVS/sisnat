@@ -31,22 +31,58 @@ class EspecieAnimal(BaseModel):
                 f"{self.nome_popular}")
 
 
+class Endereco(BaseModel):
+    rua = models.CharField(
+        max_length=50,
+        blank=True,
+        null=True,
+        verbose_name='Rua',
+        )
+    numero = models.CharField(
+        max_length=5,
+        blank=True,
+        null=True,
+        verbose_name='Número',
+        )
+    complemento = models.CharField(
+        max_length=50,
+        blank=True,
+        null=True,
+        verbose_name='Complemento',
+        )
+    bairro = models.CharField(
+        max_length=50,
+        blank=True,
+        null=True,
+        verbose_name='Bairro',
+        )
+    
+    class Meta:
+        verbose_name = 'Endereço'
+        verbose_name_plural = 'Endereço'
+
+    def __str__(self):
+        return (f"{self.rua} n: "
+                f"{self.numero}")
+
+
 class LocalResgate(BaseModel):
     municipio = models.CharField(
         verbose_name='Município de origem',
         max_length=50,
         )
-    endereco = models.CharField(
-        max_length=100,
+    endereco = models.ForeignKey(
+        Endereco,
+        on_delete=models.SET_NULL,
+        verbose_name='Endereço',
         blank=True,
         null=True,
-        verbose_name='Endereço',
         )
     area_resgate = models.CharField(
         verbose_name='Área do resgate',
-        max_length=50,
-        blank=True,
-        null=True,
+        choices=choices.AREA_RESGATE_CHOICES,
+        default=choices.AREA_R,
+        max_length=15,
         )
     longitude = models.FloatField(
         max_length=12,
@@ -102,7 +138,7 @@ class RelatorioAnimal(BaseModel):
     local_resgate = models.ForeignKey(
         LocalResgate,
         on_delete=models.RESTRICT,
-        verbose_name='Local de Resgate do Animal',
+        verbose_name='Local de Resgate',
         )
     bo = models.CharField(
         verbose_name='Boletim de ocorrência',
@@ -119,29 +155,27 @@ class RelatorioAnimal(BaseModel):
     origem = models.ForeignKey(
         OrigemAnimal,
         on_delete=models.SET_NULL,
-        verbose_name='Origem do Animal',
+        verbose_name='Origem',
         blank=True,
         null=True,
         )
     motivo = models.ForeignKey(
         MotivoResgate,
         on_delete=models.SET_NULL,
-        verbose_name='Motivo do resgate do Animal',
+        verbose_name='Motivo do resgate',
         blank=True,
         null=True,
         )
-    soltura = models.TextField(
+    observacao = models.TextField(
         blank=True,
         null=True,
-        verbose_name='Soltura',
+        verbose_name='Observação',
         )
     def __str__(self):
-        return (f"Local Resgate: {self.local_resgate} \n"
-                f"B.O.: {self.bo} \n"
-                f"Termo de destinação: {self.termo_destinacao}")
+        return (f"Local Resgate: {self.local_resgate} \n")
     class Meta:
-        verbose_name = 'Relatório de Resgate'
-        verbose_name_plural = 'Relatórios de Resgate'
+        verbose_name = 'Resgate'
+        verbose_name_plural = 'Resgate'
 
 
 class Doador(BaseModel):
@@ -164,11 +198,37 @@ class Doador(BaseModel):
         verbose_name_plural = 'Doadores'
 
 
+class Status(BaseModel):
+    status = models.CharField(
+        max_length=50,
+        verbose_name='Status',
+        choices=choices.STATUS_CHOICES,
+        default=choices.P_IPEVS,
+        )
+    data_saida = models.DateField(
+        verbose_name='Data de Saída',
+        blank=True,
+        null=True,
+        )
+    observacao = models.TextField(
+        verbose_name='Observação',
+        blank=True,
+        null=True,
+        )
+
+    def __str__(self):
+        return (f"{self.status} \n")
+
+    class Meta:
+        verbose_name = 'Status'
+        verbose_name_plural = 'Status'
+
+
 class Animal(BaseModel):
     especie = models.ForeignKey(
         EspecieAnimal,
         on_delete=models.RESTRICT,
-        verbose_name='Tipo do animal',
+        verbose_name='Animal',
         )
     # imagem = models.ImageField(
     #     blank=True,
@@ -205,14 +265,19 @@ class Animal(BaseModel):
         choices=choices.CONDICAO_FISICA_CHOICES,
         default=choices.BOA,
         )
-    esta_vivo = models.BooleanField(
-        default=True,
-        verbose_name='O animal está vivo?',
+    # esta_vivo = models.BooleanField(
+    #     default=True,
+    #     verbose_name='O animal está vivo?',
+    #     )
+    status = models.ForeignKey(
+        Status,
+        on_delete=models.CASCADE,
+        verbose_name='Status',
         )
     relatorio = models.ForeignKey(
         RelatorioAnimal,
         on_delete=models.RESTRICT,
-        verbose_name='Relatorio',
+        verbose_name='Relatório',
         )
     doador = models.ForeignKey(
         Doador,
@@ -235,7 +300,6 @@ class FichaClinica(BaseModel):
     animal = models.ForeignKey(
         Animal,
         on_delete=models.CASCADE,
-        verbose_name="Codigo Interno",
         )
     data_procedimento = models.DateField(
         verbose_name='Data da observação',
@@ -255,7 +319,6 @@ class Alimentacao(BaseModel):
     animal = models.ForeignKey(
         Animal,
         on_delete=models.CASCADE,
-        verbose_name="Código Interno",
         )
     data_alimentacao = models.DateField(
         verbose_name='Data da alimentação',
@@ -268,7 +331,7 @@ class Alimentacao(BaseModel):
         verbose_name='Unidade de medida',
         choices=choices.UNIDADE_DE_MEDIDA_CHOICES,
         default=choices.GRAMAS,
-        max_length=5,
+        max_length=7,
         blank=True,
         null=True,
         )
@@ -291,7 +354,6 @@ class Observacao(BaseModel):
     animal = models.ForeignKey(
         Animal,
         on_delete=models.CASCADE,
-        verbose_name="Codigo Interno",
         )
     data_observacao = models.DateField(
         verbose_name='Data da observação',
@@ -349,79 +411,111 @@ class Morfometria(BaseModel):
     data_medicao = models.DateField(
         verbose_name='Data da medição',
         )
-    cc = models.CharField(
-        verbose_name='Comprimento da Calda',
-        max_length=30,
-        blank=True,
-        null=True,
-        )
-    cf = models.CharField(
-        max_length=30,
-        blank=True,
-        null=True,
-        )
-    cp = models.CharField(
-        max_length=30,
-        blank=True,
-        null=True,
-        )
-    cpp = models.CharField(
-        max_length=30,
-        blank=True,
-        null=True,
-        )
-    crc = models.CharField(
-        max_length=30,
-        blank=True,
-        null=True,
-        )
-    ct = models.CharField(
-        max_length=30,
-        blank=True,
-        null=True,
-        )
-    cta = models.CharField(
-        max_length=30,
-        blank=True,
-        null=True,
-        )
-    don = models.CharField(
-        max_length=30,
-        blank=True,
-        null=True,
-        )
     peso = models.CharField(
-        max_length=30,
+        verbose_name='Peso',
+        max_length=10,
         blank=True,
         null=True,
         )
-    ca = models.CharField(
-        max_length=30,
+    comp_corpo = models.CharField(
+        verbose_name='Comprimento corpo',
+        max_length=10,
         blank=True,
         null=True,
         )
-    cb = models.CharField(
-        max_length=30,
+    comp_pernas = models.CharField(
+        verbose_name='Comprimento pernas',
+        max_length=10,
         blank=True,
         null=True,
         )
-    h = models.CharField(
-        max_length=30,
+    comp_pedipalpos = models.CharField(
+        verbose_name='Comprimento pedipalpos',
+        max_length=10,
         blank=True,
         null=True,
         )
-    cm = models.CharField(
-        max_length=30,
+    comp_calda = models.CharField(
+        verbose_name='Comprimento da calda',
+        max_length=10,
         blank=True,
         null=True,
         )
-    cra = models.CharField(
-        max_length=30,
+    comp_femur = models.CharField(
+        verbose_name='Comprimento fêmur',
+        max_length=10,
         blank=True,
         null=True,
         )
-    ho = models.CharField(
-        max_length=30,
+    comp_cabeca = models.CharField(
+        verbose_name='Comprimento cabeça',
+        max_length=10,
+        blank=True,
+        null=True,
+        )
+    comp_rosto_cloacal = models.CharField(
+        verbose_name='Comprimento rostro-cloacal',
+        max_length=10,
+        blank=True,
+        null=True,
+        )
+    comp_tibia = models.CharField(
+        verbose_name='Comprimento tíbia',
+        max_length=10,
+        blank=True,
+        null=True,
+        )
+    comp_tarso = models.CharField(
+        verbose_name='Comprimento do tarso',
+        max_length=10,
+        blank=True,
+        null=True,
+        )
+    dist_olho_narina = models.CharField(
+        verbose_name='Distância entre olho-narina',
+        max_length=10,
+        blank=True,
+        null=True,
+        )
+    comp_asa = models.CharField(
+        verbose_name='Comprimento da asa',
+        max_length=10,
+        blank=True,
+        null=True,
+        )
+    comp_bico = models.CharField(
+        verbose_name='Comprimento do bico',
+        max_length=10,
+        blank=True,
+        null=True,
+        )
+    altura_bico = models.CharField(
+        verbose_name='Altura do bico',
+        max_length=10,
+        blank=True,
+        null=True,
+        )
+    comp_pe = models.CharField(
+        verbose_name='Comprimento do pé',
+        max_length=10,
+        blank=True,
+        null=True,
+        )
+    comp_mao = models.CharField(
+        verbose_name='Comprimento da mão',
+        max_length=10,
+        blank=True,
+        null=True,
+        )
+    comp_rosto_anal = models.CharField(
+        verbose_name='Comprimento rostro-anal',
+        max_length=10,
+        blank=True,
+        null=True,
+        )
+    altura_orelha = models.CharField(
+        verbose_name='Altura da orelha',
+        max_length=10,
         blank=True,
         null=True,
         )

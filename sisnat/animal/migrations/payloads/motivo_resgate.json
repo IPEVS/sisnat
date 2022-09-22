@@ -6,18 +6,18 @@
         "descricao": "Animal encaminhado para o IPEVS"
     },
     {
-        "descricao": "Animal retirado pelo IPEVS no local da solicitacao"
+        "descricao": "Animal retirado pelo IPEVS no local da solicitação"
     },
     {
-        "descricao": "Animal encaminhado para o IPEVS atraves do Corpo de Bombeiros"
+        "descricao": "Animal encaminhado para o IPEVS através do Corpo de Bombeiros"
     },
     {
-        "descricao": "Animal encaminhado para o IPEVS atraves do IBAMA"
+        "descricao": "Animal encaminhado para o IPEVS através do IBAMA"
     },
     {
-        "descricao": "Animal encaminhado para o IPEVS atraves do IAT"
+        "descricao": "Animal encaminhado para o IPEVS através do IAT (Instituto Ambiental do Paraná)"
     },
     {
-        "descricao": "Animal encaminhado para o IPEVS atraves da Policia Ambiental"
+        "descricao": "Animal encaminhado para o IPEVS através da Polícia Ambiental"
     }  
 ]

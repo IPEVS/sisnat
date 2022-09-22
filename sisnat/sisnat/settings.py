@@ -182,7 +182,7 @@ JAZZMIN_SETTINGS = {
     "custom_css": "css/main.css",
     "custom_js": "js/main.js",
 
-    "show_ui_builder": True,
+    # "show_ui_builder": True,
 
     ###############
     # Change view #
