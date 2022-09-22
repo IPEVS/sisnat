@@ -4,10 +4,6 @@
 
 {% block body %}
 
-<!-- <div>
-    <h1>Pritando todos animals sem formatação</h1>
-    {{ animals }}
-</div> -->
 <div class="A4">
     <div class="container">
         <ul class="list-group">
@@ -58,18 +54,18 @@
                         <li class="list-group-item disabled col-4" aria-disabled="true">
                             Faixa etária: {{ animal.faixa_etaria }}
                         </li>
-                        <li class="list-group-item disabled col-4" aria-disabled="true">
+                        <li class="list-group-item disabled col-3" aria-disabled="true">
                             Condição Física: {{ animal.condicao_fisica }}
                         </li>
-                        {% if animal.esta_vivo %}
-                            <li class="list-group-item disabled col-4" aria-disabled="true">
-                                O animal está vivo?: Sim
-                            </li>
-                        {% else %}
-                            <li class="list-group-item disabled col-4" aria-disabled="true">
-                                O animal está vivo?: Não
-                            </li>
-                        {% endif %}
+                        <li class="list-group-item disabled col-5" aria-disabled="true">
+                            Status: {{ animal.status.status }}
+                        </li>
+                        <li class="list-group-item disabled col-5" aria-disabled="true">
+                            Data de Saída: {{ animal.status.data_saida }}
+                        </li>
+                        <li class="list-group-item disabled col-7" aria-disabled="true">
+                            Observação: {{ animal.status.observacao }}
+                        </li>
                         <li class="list-group-item disabled col-12" aria-disabled="true"></li>
                     </div>
                     <div class="row">
@@ -91,107 +87,125 @@
                     </div>
                     <div class="row">
                         {% for ficha in animal.fichas_clinicas %}
-                        <li class="list-group-item disabled col-5" aria-disabled="true">
-                            Data procedimento: {{ ficha.data_procedimento }}
-                        </li>
-                        <li class="list-group-item disabled col-7" aria-disabled="true">
-                            Procedimento: {{ ficha.procedimento }}
-                        </li>
-                        <li class="list-group-item disabled col-12" aria-disabled="true"></li>
+                            <li class="list-group-item disabled col-5" aria-disabled="true">
+                                Data procedimento: {{ ficha.data_procedimento }}
+                            </li>
+                            <li class="list-group-item disabled col-7" aria-disabled="true">
+                                Procedimento: {{ ficha.procedimento }}
+                            </li>
+                            <li class="list-group-item disabled col-12" aria-disabled="true"></li>
                         {% endfor %}
                     </div>
                     <div class="row">
                         {% for observacoes in animal.observacoes %}
-                        <li class="list-group-item disabled col-5" aria-disabled="true">
-                            Data observação: {{ observacoes.data_observacao }}
-                        </li>
-                        <li class="list-group-item disabled col-7" aria-disabled="true">
-                            Observação: {{ observacoes.observacao }}
-                        </li>
-                        <li class="list-group-item disabled col-12" aria-disabled="true"></li>
+                            <li class="list-group-item disabled col-5" aria-disabled="true">
+                                Data observação: {{ observacoes.data_observacao }}
+                            </li>
+                            <li class="list-group-item disabled col-7" aria-disabled="true">
+                                Observação: {{ observacoes.observacao }}
+                            </li>
+                            <li class="list-group-item disabled col-12" aria-disabled="true"></li>
                         {% endfor %}
                     </div>
                     <div class="row">
-                            {% for ecdises in animal.ecdises %}
-                            <li class="list-group-item disabled col-3" aria-disabled="true">
-                                Classe: {{ ecdises.classe }}
-                            </li>
-                            <li class="list-group-item disabled col-6" aria-disabled="true">
+                        {% for ecdises in animal.ecdises %}
+                            <li class="list-group-item disabled col-5" aria-disabled="true">
                                 Data ecdise: {{ ecdises.data_ecdise }}
                             </li>
                             <li class="list-group-item disabled col-3" aria-disabled="true">
-                            Ecdise: {{ ecdises.ecdise }}
+                                Classe: {{ ecdises.classe }}
+                            </li>
+                            <li class="list-group-item disabled col-4" aria-disabled="true">
+                                Ecdise: {{ ecdises.ecdise }}
                             </li>
                             <li class="list-group-item disabled col-12" aria-disabled="true"></li>
                         {% endfor %}
                     </div>
                     <div class="row">
                         {% for morfometrias in animal.morfometrias %}
-                            <li class="list-group-item disabled col-3" aria-disabled="true">
-                                Classe: {{ morfometrias.classe }}
-                            </li>
                             <li class="list-group-item disabled col-5" aria-disabled="true">
                                 Data medição: {{ morfometrias.data_medicao }}
                             </li>
-                            <li class="list-group-item disabled col-4" aria-disabled="true">
-                                Comprimento da calda: {{ morfometrias.cc }}
+                            <li class="list-group-item disabled col-7" aria-disabled="true">
+                                Observação: {{ morfometrias.observacao }}
                             </li>
-                            <li class="list-group-item disabled col-2" aria-disabled="true">
-                                Cf: {{ morfometrias.cf }}
+                            <li class="list-group-item disabled col-3" aria-disabled="true">
+                                Classe: {{ morfometrias.classe }}
                             </li>
-                            <li class="list-group-item disabled col-2" aria-disabled="true">
-                                Cp: {{ morfometrias.cp }}
-                            </li>
-                            <li class="list-group-item disabled col-2" aria-disabled="true">
-                                Cpp: {{ morfometrias.cpp }}
-                            </li>
-                            <li class="list-group-item disabled col-2" aria-disabled="true">
-                                Crc: {{ morfometrias.crc }}
-                            </li>
-                            <li class="list-group-item disabled col-2" aria-disabled="true">
-                                Ct: {{ morfometrias.ct }}
-                            </li>
-                            <li class="list-group-item disabled col-2" aria-disabled="true">
-                                Cta: {{ morfometrias.cta }}
-                            </li>
-                            <li class="list-group-item disabled col-2" aria-disabled="true">
-                                Don: {{ morfometrias.don }}
-                            </li>
-                            <li class="list-group-item disabled col-2" aria-disabled="true">
+                            <li class="list-group-item disabled col-3" aria-disabled="true">
                                 Peso: {{ morfometrias.peso }}
                             </li>
-                            <li class="list-group-item disabled col-2" aria-disabled="true">
-                                Ca: {{ morfometrias.ca }}
+                            <li class="list-group-item disabled col-3" aria-disabled="true">
+                                Comprimento cabeça: {{ morfometrias.comp_cabeca }}
                             </li>
-                            <li class="list-group-item disabled col-2" aria-disabled="true">
-                                Cb: {{ morfometrias.cb }}
+                            <li class="list-group-item disabled col-3" aria-disabled="true">
+                                Altura da orelha: {{ morfometrias.altura_orelha }}
                             </li>
-                            <li class="list-group-item disabled col-2" aria-disabled="true">
-                                H: {{ morfometrias.h }}
+                            <li class="list-group-item disabled col-3" aria-disabled="true">
+                                Comprimento corpo: {{ morfometrias.comp_corpo }}
                             </li>
-                            <li class="list-group-item disabled col-2" aria-disabled="true">
-                                Cm: {{ morfometrias.cm }}
+                            <li class="list-group-item disabled col-3" aria-disabled="true">
+                                Comprimento da mão: {{ morfometrias.comp_mao }}
                             </li>
-                            <li class="list-group-item disabled col-2" aria-disabled="true">
-                                Cra: {{ morfometrias.cra }}
+                            <li class="list-group-item disabled col-3" aria-disabled="true">
+                                Comprimento da calda: {{ morfometrias.comp_calda }}
                             </li>
-                            <li class="list-group-item disabled col-2" aria-disabled="true">
-                                Ho: {{ morfometrias.ho }}
+                            <li class="list-group-item disabled col-3" aria-disabled="true">
+                                Comprimento fêmur: {{ morfometrias.comp_femur }}
                             </li>
-                            <li class="list-group-item disabled col-8" aria-disabled="true">
-                                Observação: {{ morfometrias.observacao }}
+                            <li class="list-group-item disabled col-3" aria-disabled="true">
+                                Comprimento tíbia: {{ morfometrias.comp_tibia }}
+                            </li>
+                            <li class="list-group-item disabled col-3" aria-disabled="true">
+                                Comprimento pernas: {{ morfometrias.comp_pernas }}
+                            </li>
+                            <li class="list-group-item disabled col-3" aria-disabled="true">
+                                Comprimento do tarso: {{ morfometrias.comp_tarso }}
+                            </li>
+                            <li class="list-group-item disabled col-3" aria-disabled="true">
+                                Comprimento do pé: {{ morfometrias.comp_pe }}
+                            </li>
+                            <li class="list-group-item disabled col-6" aria-disabled="true">
+                                Comprimento pedipalpos: {{ morfometrias.comp_pedipalpos }}
+                            </li>
+                            <li class="list-group-item disabled col-6" aria-disabled="true">
+                                Comprimento rostro-cloacal: {{ morfometrias.comp_rosto_cloacal }}
+                            </li>
+                            <li class="list-group-item disabled col-6" aria-disabled="true">
+                                Distância entre olho-narina: {{ morfometrias.dist_olho_narina }}
+                            </li>
+                            <li class="list-group-item disabled col-6" aria-disabled="true">
+                                Comprimento rostro-anal: {{ morfometrias.comp_rosto_anal }}
+                            </li>
+                            <li class="list-group-item disabled col-4" aria-disabled="true">
+                                Comprimento da asa: {{ morfometrias.comp_asa }}
+                            </li>
+                            <li class="list-group-item disabled col-4" aria-disabled="true">
+                                Comprimento do bico: {{ morfometrias.comp_bico}}
+                            </li>
+                            <li class="list-group-item disabled col-4" aria-disabled="true">
+                                Altura do bico: {{ morfometrias.altura_bico }}
                             </li>
                             <li class="list-group-item disabled col-12" aria-disabled="true"></li>
                         {% endfor %}
                     </div>
                     <div class="row">
-                        <li class="list-group-item disabled col-6" aria-disabled="true">
+                        <li class="list-group-item disabled col-4" aria-disabled="true">
                             Município: {{ animal.relatorio.local_resgate.municipio }}
                         </li>
                         <li class="list-group-item disabled col-6" aria-disabled="true">
-                        Endereço: {{ animal.relatorio.local_resgate.endereco }}
+                            Rua: {{ animal.relatorio.local_resgate.endereco.rua }}
                         </li>
-                        <li class="list-group-item disabled col-6" aria-disabled="true">
+                        <li class="list-group-item disabled col-2" aria-disabled="true">
+                            Numero: {{ animal.relatorio.local_resgate.endereco.numero }}
+                        </li>
+                        <li class="list-group-item disabled col-4" aria-disabled="true">
+                            Bairro: {{ animal.relatorio.local_resgate.endereco.bairro }}
+                        </li>
+                        <li class="list-group-item disabled col-4" aria-disabled="true">
+                            Complemento: {{ animal.relatorio.local_resgate.endereco.complemento }}
+                        </li>
+                        <li class="list-group-item disabled col-4" aria-disabled="true">
                             Área Resgate: {{ animal.relatorio.local_resgate.area_resgate }}
                         </li>
                         <li class="list-group-item disabled col-3" aria-disabled="true">
@@ -207,13 +221,13 @@
                             Termo de destinação: {{ animal.relatorio.termo_destinacao }}
                         </li>
                         <li class="list-group-item disabled col-6" aria-disabled="true">
-                            Origem: {{ animal.relatorio.origem.descricao }}
-                        </li>
-                        <li class="list-group-item disabled col-6" aria-disabled="true">
                             Motivo: {{ animal.relatorio.motivo.descricao }}
                         </li>
-                        <li class="list-group-item disabled col-12" aria-disabled="true">
-                            Soltura: {{ animal.relatorio.soltura }}
+                        <li class="list-group-item disabled col-5" aria-disabled="true">
+                            Origem: {{ animal.relatorio.origem.descricao }}
+                        </li>
+                        <li class="list-group-item disabled col-7" aria-disabled="true">
+                            Observação: {{ animal.relatorio.observacao}}
                         </li>
                         <li class="list-group-item disabled col-12" aria-disabled="true"></li>
                     </div>

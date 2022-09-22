@@ -3,6 +3,26 @@ from django.contrib import admin
 from animal import actions, models, forms
 
 
+@admin.register(models.Endereco)
+class EnderecoAdmin(admin.ModelAdmin):
+    list_display = (
+        'rua',
+        'numero',
+        'bairro',
+        )
+    ordering = (
+        'rua',
+        'numero',
+        'bairro'
+        )
+    search_fields = [
+        'rua',
+        'numero',
+        'bairro',
+        'complemento'
+        ]
+
+
 @admin.register(models.LocalResgate)
 class LocalResgateAdmin(admin.ModelAdmin):
     list_display = (
@@ -22,6 +42,13 @@ class LocalResgateAdmin(admin.ModelAdmin):
         'endereco', 
         'area_resgate',
         ]
+    fieldsets = (
+        ('Geral', {
+            'fields': ('municipio', 'endereco', 'area_resgate')
+        }), ('Posição', {
+            'fields': ('longitude', 'latitude')
+        }),
+        )
 
 
 @admin.register(models.OrigemAnimal)
@@ -86,6 +113,25 @@ class DoadorAdmin(admin.ModelAdmin):
         ]
 
 
+@admin.register(models.Status)
+class StatusAdmin(admin.ModelAdmin):
+    list_display = (
+        'status',
+        'data_saida',
+        'observacao',
+        )
+    ordering = (
+        'status',
+        'data_saida',
+        'observacao',
+        )
+    search_fields = [
+        'status',
+        'data_saida',
+        'observacao',
+        ]
+
+
 @admin.register(models.EspecieAnimal)
 class EspecieAnimalAdmin(admin.ModelAdmin):
     list_display = (
@@ -110,29 +156,34 @@ class EspecieAnimalAdmin(admin.ModelAdmin):
 
 class FichaClinicaInline(admin.StackedInline):
     model = models.FichaClinica
-    extra = 1
+    ordering = ['-criado_em']
+    extra = 0
 
 
 class AlimentacaoInline(admin.StackedInline):
     model = models.Alimentacao
-    extra = 1
+    ordering = ['-criado_em']
+    extra = 0
 
 
 class ObservacaoInline(admin.StackedInline):
     model = models.Observacao
-    extra = 1
+    ordering = ['-criado_em']
+    extra = 0
 
 
 class EcdiseInline(admin.StackedInline):
     form = forms.EcdiseForm
     model = models.Ecdise
-    extra = 1
+    ordering = ['-criado_em']
+    extra = 0
 
 
 class MorfometriaInline(admin.StackedInline):
     form = forms.MorfometriaForm
     model = models.Morfometria
-    extra = 1
+    ordering = ['-criado_em']
+    extra = 0
 
 
 @admin.register(models.Animal)
@@ -154,20 +205,20 @@ class AnimalAdmin(admin.ModelAdmin):
         'codigo_interno',
         'data_entrada',
         'condicao_fisica',
-        'esta_vivo',
+        'status',
         )
     list_filter = (
         'especie__classe',
         'data_entrada',
         'data_nascimento',
-        'esta_vivo',
+        'status',
         )
     ordering = (
         'especie',
         'codigo_interno',
         'data_entrada',
         'condicao_fisica',
-        'esta_vivo',
+        'status',
         )
     search_fields = [
         'especie__classe',
@@ -175,9 +226,9 @@ class AnimalAdmin(admin.ModelAdmin):
         'especie__nome_cientifico',
         'codigo_interno',
         'condicao_fisica',
-        'esta_vivo',
+        'status',
         ]
     actions = [
-        actions.animal_morto,
-        actions.imprimir_relatorio
+        actions.imprimir_relatorio,
+        actions.export_excel
         ]

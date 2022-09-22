@@ -60,10 +60,38 @@ GRAMAS = 'g'
 MG = 'mg'
 LITROS = 'l'
 ML = 'ml'
+UNI = 'unidade'
+POR = 'porcao'
+PED = 'pedaco'
 UNIDADE_DE_MEDIDA_CHOICES = [
     (KG, 'kg'),
     (GRAMAS, 'g'),
     (MG, 'mg'),
-    (LITROS, 'l'),
+    (LITROS, 'L'),
     (ML, 'ml'),
+    (UNI, 'unidade'),
+    (POR, 'porção'),
+    (PED, 'pedaço'),
+]
+
+#Area
+AREA_U = 'Área urbana'
+AREA_R = 'Área rural'
+AREA_RESGATE_CHOICES = [
+    (AREA_U, 'Área urbana'),
+    (AREA_R, 'Área rural')
+]
+
+#Status
+P_IPEVS = "Plantel IPEVS"
+P_IPEVS_R_O = "Plantel IPEVS – recuperacao/observacao"
+P_IPEVS_ENC = "Plantel IPEVS – encaminhar para outro centro"
+SOL = "Soltura"
+OBI = "Obito"
+STATUS_CHOICES = [
+    (P_IPEVS, "Plantel IPEVS"),
+    (P_IPEVS_R_O, "Plantel IPEVS – recuperação/observação "),
+    (P_IPEVS_ENC, "Plantel IPEVS – encaminhar para outro centro"),
+    (SOL, 'Soltura'),
+    (OBI, 'Óbito'),
 ]
