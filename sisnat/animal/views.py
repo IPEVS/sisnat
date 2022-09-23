@@ -5,6 +5,9 @@ from django.contrib.auth.decorators import login_required
 def home_page(request):
     return render(request, 'animal/home_page.html')
 
+def help(request):
+    return render(request, 'help/help.html')
+
 @login_required(login_url='/sisnat/')
 def pdf_page(request):
     return render(request, 'animal/pdf_page.html')

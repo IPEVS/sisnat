@@ -1,255 +1,48 @@
-*, 
-*:after,
-*:before {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-}
-body {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 100%;
-    list-style-type: none;
-    height: 100vh;
-    width: 100%;
-    background: linear-gradient(180deg, #ffffff, #ffffff, #6aa570);
-}
-h1, h2, h3, h4, h5, h6 {
-    text-align: justify;
-}
-.btn-outline-primary-green {
-    text-decoration: none;
-    font-size: 20px;
-    color: #6aa570; 
-    border: 2px solid #6aa570;
-    background: #ffffff;
-    padding: 20px 100px; 
-    border-radius: 0.4rem;
-    transition: 0.5s;
+.sisnat-color {
+    color: #416e3b;
 }
 
-.btn-outline-primary-green:hover {
+.icon-color {
     color: #ffffff; 
-    background-color: #48704c;
-    border-color: #48704c; 
 }
 
-.span-margin {
-    margin: 0px 4px;
+.link-color:hover {
+    color: #1b340c;
 }
 
-.titulo-h2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    color: #6aa570;
-    margin-left: 10px; 
+.btn-outline-primary {
+    color: #ffffff; 
+    border: 1px solid #ffffff;
 }
 
-@media (max-width: 2677px) {
-    .titulo-h2{
-        font-size: 4rem;
-    }
-    .logoSISNAT{
-        width: 180px;
-        height: 180px;
-    }
-    .logoIPEVS {
-        height: 200px;
-    }
-    h1 {
-        font-size: 10rem;
-    }
-    h6 {
-        font-size: 2rem;
-    }
-    .btn-outline-primary-green {
-        font-size: 3rem;
-    } 
-    footer {
-        width: 50%;
-        position: absolute;
-        bottom: 20px;
-    }
-    .copyright {
-        font-size: 2rem;
-    }
-    .logoUENP {
-        height: 180px;
-    }
-    .logoCCT {
-        height: 170px;
-    }
-}
-@media (max-width: 2400px) {
-    footer {
-        width: 55%;
-    }
-}
-@media (max-width: 2150px) {
-    footer {
-        width: 60%;
-    }
-}
-@media (max-width: 2000px) {
-    footer {
-        width: 70%;
-    }
-}
-@media (max-width: 1800px) {
-    footer {
-        width: 75%;
-    }
-}
-@media (max-width: 1700px) {
-    footer {
-        width: 80%;
-    }
-}
-@media (max-width: 1600px) {
-    .titulo-h2{
-        font-size: 2rem;
-    }
-    .logoSISNAT{
-        width: 80px;
-        height: 80px;
-    }
-    .logoIPEVS {
-        height: 100px;
-    }
-    h1 {
-        font-size: 2.8rem;
-    }
-    h6 {
-        font-size: 1.2rem;
-    }
-    .btn-outline-primary-green {
-        font-size: 1.2rem;
-    } 
-    footer {
-        width: 82%;
-        position: absolute;
-        bottom: 20px;
-    }
-    .copyright {
-        font-size: 1rem;
-    }
-    .logoUENP {
-        height: 80px;
-    }
-    .logoCCT {
-        height: 70px;
-    }
+.btn-outline-primary:hover {
+    background-color: #1b340c;
+    border-color: #1b340c; 
 }
 
-@media (max-width: 1500px) {
-    footer {
-        width: 85%;
-    }
+.btn-outline-primary:focus {
+    box-shadow: 0 0 0 0.25rem rgba(27, 52, 12, 0.502);
+}
+.btn-outline-primary:active:focus {
+    box-shadow: 0 0 0 0.25rem rgba(27, 52, 12, 0.502);
 }
 
-@media (max-width: 1500px) {
-    footer {
-        width: 85%;
-    }
+.help {
+    color: #ffffff;
 }
 
-@media (max-width: 800px) {
-    .h6-col {
-        width: 100%;
-    }
-    .btn-outline-primary-green {
-        padding: 10px 80px;
-    }
-    footer {
-        width: 70%;
-    }
-}
-@media (max-width: 700px) {
-    .logoIPEVS {
-        display: none;
-    }
-    footer {
-        width: 75%;
-    }
+.help:hover {
+    color: #1b340c;
 }
 
-@media (max-width: 600px) {
-    .logoSISNAT{
-        width: 60px;
-        height: 60px;
-    }
-    .titulo-h2{
-        font-size: 1.6rem;
-    }
-    h1 {
-        font-size: 1.8rem;
-    }
-    h6 {
-        font-size: 1rem;
-    }
-    .btn-outline-primary-green {
-        font-size: 1rem;
-    } 
-    .section-flex {
-        width: 100%;
-        display: grid;
-        grid-template-columns: 1fr;
-        margin: 50px 0px 20px 50px;
-    }
-    .btn-outline-primary-green {
-        padding: 10px 40px;
-    }
-    footer {
-        width: 85%;
-    }
-}
-@media (max-width: 575px) {
-    footer {
-        width: 95%;
-    }
-}
-@media (max-width: 475px) {
-    .logoSISNAT{
-        width: 60px;
-        height: 60px;
-    }
-    .titulo-h2{
-        font-size: 1rem;
-    }
-    .section-flex {
-        margin: 20px 0px 0px 10px;
-    }
-    h1 {
-        font-size: 1.2rem;
-    }
-    h6 {
-        font-size: 0.8rem;
-    }
-    .btn-outline-primary-green {
-        padding: 10px 20px;
-        font-size: 0.7rem;
-    } 
-    .logoUENP {
-        height: 60px;
-    }
-    .logoCCT {
-        height: 50px;
-    }
-    footer {
-        width: 95%;
-    }
+.header-color {
+    background-color: #416e3be8;
 }
 
-@media (max-width: 300px) {
-    h6 {
-        font-size: 0.7rem;
-    }
-    .btn-outline-primary-green {
-        font-size: 0.8rem;
-    } 
-    .footer {
-        display: none;
-    }
+.footer-color {
+    background-color: #1b340c;
+}   
+
+.card-opacity:hover {
+    opacity: 0.8;
 }

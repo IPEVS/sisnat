@@ -1,0 +1,213 @@
+{% extends "base_bootstrap.html" %}
+
+{% block title %}SISNAT{% endblock %}
+
+{% block head_css %}
+<link rel="stylesheet" href="../../static/css/style.css">
+<link rel="stylesheet" href="../../static/css/help.css">
+{% endblock %}
+
+{% block body %}
+<div class="header-color shadow-lg mb-5">
+    <div class="container">
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3">
+            <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+                <img src="../../static/images/logoSISNAT_circle.png" alt="SISNAT LOGO" width="80" height="80"
+                    class="logoSISNAT">
+                <h1 class="display-5 fw-bold mx-4 title-page-color text-light">SISNAT</h1>
+            </a>
+            <div class="col-md-3 text-end d-flex justify-content-end">
+                <a href="/sisnat/" class="btn btn-outline-primary me-3">Login</a>
+                <a href="/" class="help me-2"><i class="fa-solid fa-rotate-left fa-2x"></i></a>
+                <a class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                    aria-controls="offcanvasNavbar">
+                    <i class="fa-solid fa-bars fa-lg text-light"></i>
+                </a>
+            </div>
+
+            <div class="offcanvas offcanvas-end" style="background-color: #6aa570;" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title h4 text-light" id="offcanvasNavbarLabel">Menu SISNAT</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 h6">
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="#myCarousel"><i class="fa-solid fa-paw mx-2"></i>...</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="#myCarousel2"><i class="fa-solid fa-paw mx-2"></i>...</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-light dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-paw mx-2"></i>...
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href=""><i class="fa-solid fa-paw mx-2"></i>...</a></li>
+                                <li><a class="dropdown-item" href=""><i class="fa-solid fa-paw mx-2"></i>...</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-paw mx-2"></i>...</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="#footer"><i class="fa-solid fa-paw mx-2"></i>Footer</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </header>
+    </div>
+</div>
+
+<main class="container">
+    <div id="myCarousel" class="my-5 carousel slide shadow" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <svg class="bd-placeholder-img" width="100%" height="600px" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#6aa570"/></svg>
+                
+                <div class="container">
+                    <div class="carousel-caption text-start">
+                        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, excepturi alias. Eos officia aperiam blanditiis ipsum perspiciatis labore quia possimus velit placeat veniam tempora quibusdam, ex vel harum totam saepe!</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, excepturi alias. Eos officia aperiam blanditiis ipsum perspiciatis labore quia possimus velit placeat veniam tempora quibusdam, ex vel harum totam saepe!</p>
+                        <p><a class="btn btn-lg btn-primary" href="#">Lorem</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <svg class="bd-placeholder-img" width="100%" height="600px" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#6aa570"/></svg>
+    
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, excepturi alias. Eos officia aperiam blanditiis ipsum perspiciatis labore quia possimus velit placeat veniam tempora quibusdam, ex vel harum totam saepe!</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, excepturi alias. Eos officia aperiam blanditiis ipsum perspiciatis labore quia possimus velit placeat veniam tempora quibusdam, ex vel harum totam saepe!</p>
+                        <p><a class="btn btn-lg btn-primary" href="#">Lorem</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <svg class="bd-placeholder-img" width="100%" height="600px" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#6aa570"/></svg>
+    
+                <div class="container">
+                    <div class="carousel-caption text-end">
+                        <h1>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae deserunt numquam dolore delectus! Minus quaerat velit voluptas accusantium quia rem dignissimos voluptatibus, consequuntur minima dolorum aperiam nulla deleniti earum rerum.</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, excepturi alias. Eos officia aperiam blanditiis ipsum perspiciatis labore quia possimus velit placeat veniam tempora quibusdam, ex vel harum totam saepe!</p>
+                        <p><a class="btn btn-lg btn-primary" href="#">Lorem</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden"></span>
+        </button>
+    </div>
+    
+    <div id="myCarousel2" class="my-5 carousel slide shadow" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#myCarousel2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#myCarousel2" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#myCarousel2" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <svg class="bd-placeholder-img" width="100%" height="600px" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#6aa570"/></svg>
+                
+                <div class="container">
+                    <div class="carousel-caption text-start">
+                        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, excepturi alias. Eos officia aperiam blanditiis ipsum perspiciatis labore quia possimus velit placeat veniam tempora quibusdam, ex vel harum totam saepe!</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, excepturi alias. Eos officia aperiam blanditiis ipsum perspiciatis labore quia possimus velit placeat veniam tempora quibusdam, ex vel harum totam saepe!</p>
+                        <p><a class="btn btn-lg btn-primary" href="#">Lorem</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <svg class="bd-placeholder-img" width="100%" height="600px" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#6aa570"/></svg>
+    
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, excepturi alias. Eos officia aperiam blanditiis ipsum perspiciatis labore quia possimus velit placeat veniam tempora quibusdam, ex vel harum totam saepe!</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, excepturi alias. Eos officia aperiam blanditiis ipsum perspiciatis labore quia possimus velit placeat veniam tempora quibusdam, ex vel harum totam saepe!</p>
+                        <p><a class="btn btn-lg btn-primary" href="#">Lorem</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <svg class="bd-placeholder-img" width="100%" height="600px" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#6aa570"/></svg>
+    
+                <div class="container">
+                    <div class="carousel-caption text-end">
+                        <h1>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae deserunt numquam dolore delectus! Minus quaerat velit voluptas accusantium quia rem dignissimos voluptatibus, consequuntur minima dolorum aperiam nulla deleniti earum rerum.</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, excepturi alias. Eos officia aperiam blanditiis ipsum perspiciatis labore quia possimus velit placeat veniam tempora quibusdam, ex vel harum totam saepe!</p>
+                        <p><a class="btn btn-lg btn-primary" href="#">Lorem</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel2" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel2" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden"></span>
+        </button>
+    </div>
+</main>
+
+
+<div id="footer" class="footer-color mt-5">
+    <div class="container">
+        <footer class="py-5">
+            <h2 class="text-light h2 text-center justify-content-center">Fale conosco</h2>
+            <div class="row mt-5">
+                <div class="col-6 col-md-6 mb-3 text-light">
+                    <h5 class="h4">Contato</h5>
+                    <ul class="nav flex-column h6">
+                        <li class="nav-item mb-2"><a class="nav-link p-0 text-light"><i
+                                    class="fa-solid fa-phone mx-2 icon-color"></i>(43) 98435-6175</a></li>
+                        <li class="nav-item mb-2"><a href="mailto:ipevs@ipevs.org.br"
+                                class="nav-link p-0 text-light "><i
+                                    class="fa-solid fa-envelope mx-2 icon-color"></i>ipevs@ipevs.org.br</a></li>
+                        <li class="nav-item mb-2"><a href="https://www.instagram.com/ipevsfauna/"
+                                class="nav-link p-0 text-light "><i
+                                    class="fa-brands fa-instagram mx-2 icon-color"></i>@ipevsfauna</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-6 mb-3 text-light">
+                    <h5 class="h4">Endereço</h5>
+                    <ul class="nav flex-column h6">
+                        <li class="nav-item mb-2"><a class="nav-link p-0 text-light"><i
+                                    class="fa-solid fa-road mx-2 icon-color"></i>Rua Altamiro de Assis Pereira, nº
+                                290</a></li>
+                        <li class="nav-item mb-2"><a class="nav-link p-0 text-light"><i
+                                    class="fa-solid fa-signs-post mx-2 icon-color"></i></i>Jardim Morumbi</a></li>
+                        <li class="nav-item mb-2"><a class="nav-link p-0 text-light"><i
+                                    class="fa-solid fa-location-dot mx-2 icon-color"></i>Cornélio Procópio - PR</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top text-light">
+                <p>Desenvolvido durante o PIBIS</p>
+                <p>Todos os direitos reservados &copy; 2022</p>
+            </div>
+        </footer>
+    </div>
+</div>
+{% endblock %}

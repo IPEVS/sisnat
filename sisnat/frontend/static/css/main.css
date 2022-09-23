@@ -55,3 +55,11 @@
 div.add-row > a {
     background-color: #48704c;
 }
+
+#jazzy-collapsible .collapsible-header:hover {
+    background-color: #48704c !important;
+}
+
+.changelink {
+    display: none !important;
+}
