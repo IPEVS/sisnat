@@ -210,8 +210,8 @@ class AnimalAdmin(admin.ModelAdmin):
     list_filter = (
         'especie__classe',
         'data_entrada',
-        'data_nascimento',
-        'status',
+        'condicao_fisica',
+        'status__status',
         )
     ordering = (
         'especie',
@@ -226,7 +226,7 @@ class AnimalAdmin(admin.ModelAdmin):
         'especie__nome_cientifico',
         'codigo_interno',
         'condicao_fisica',
-        'status',
+        'status__status',
         ]
     actions = [
         actions.imprimir_relatorio,

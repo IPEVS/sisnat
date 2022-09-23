@@ -3,61 +3,182 @@
 {% block title %}SISNAT{% endblock %}
 
 {% block head_css %}
-    <link rel="stylesheet" href="../../static/css/style.css">
+<link rel="stylesheet" href="../../static/css/style.css">
 {% endblock %}
 
 {% block body %}
+<div class="header-color shadow-lg">
     <div class="container">
-        <header class="row">
-            <div class="col-8 d-flex justify-content-start mt-3">
-                <a href="/">
-                    <img src="../../static/images/logoSISNAT_circle.png" alt="SISNAT LOGO" width="80" height="80"
-                        class="logoSISNAT">
-                </a>
-                <h2 class="d-flex justify-content-center titulo-h2">SISNAT</h2>
-            </div>
-            <div class="col-4 d-flex justify-content-end mt-3">
-                <img class="logoIPEVS" src="../../static/images/logoIPEVS.jpg" alt="IPEVS logo" width="" height="100">
+        <header
+            class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4">
+            <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+                <img src="../../static/images/logoSISNAT_circle.png" alt="SISNAT LOGO" width="80" height="80"
+                    class="logoSISNAT">
+                <h1 class="display-5 fw-bold mx-4 title-page-color text-light">SISNAT</h1>
+            </a>
+            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                <li class="fa-lg"><a href="http://ipevs.org.br" target="_blank" class="nav-link px-2 link-light link-color">IPEVS</a>
+                </li>
+                <li class="fa-lg"><a href="http://ipevs.org.br/?page_id=11175" target="_blank"
+                        class="nav-link px-2 link-light link-color">Conheça o
+                        IPEVS</a></li>
+                <li class="fa-lg"><a href="http://ipevs.org.br/?page_id=11179" target="_blank"
+                        class="nav-link px-2 link-light link-color">Blog
+                        IPEVS</a></li>
+            </ul>
+            <div class="col-md-3 text-end d-flex justify-content-end">
+                <a href="/sisnat/" class="btn btn-outline-primary me-3">Login</a>
+                <a href="/help/" class="help"><i class="fa-regular fa-circle-question fa-2x"></i></a>
             </div>
         </header>
+    </div>
+</div>
 
-        <section class="section-flex row">
-            <div class="col-10">
-                <div class="row d-flex align-items-center banner-content h-100">
-                    <h1 class="">Sisnat</h1>
-                    <h6 class="col-10 h6-col">
-                        O Instituto de Pesquisa em Vida Selvagem e Meio Ambiente – IPEVS,
-                        é uma Organização da Sociedade Civil de Interesse Público,
-                        com autonomia administrativa e financeira, sem fins lucrativos.<br />
+<div class="container px-4 py-4" id="custom-cards">
+    <h2 class="pb-2 border-bottom display-4 fw-bold">Sejam Bem-vindos ao <span class="sisnat-color">SISNAT</span>!</h2>
+    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+        <div class="col">
+            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                style="background-image: url('../../static/images/banner_lagarto.png'); background-repeat: no-repeat; background-origin: content-box; background-size: cover;">
+                <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1 card-opacity">
+                    <h3 class="pt-5 mt-5 mb-4 display-2 lh-1 text-white fw-bold"><a href="http://ipevs.org.br" target="_blank" class="nav-link  link-light">IPEVS</a></h3>
+                    <p class="pt-5 mt-5 mb-4 text-white">O Instituto de Pesquisa em Vida Selvagem e Meio Ambiente
+                        (IPEVS) tem por finalidade desenvolver e executar atividades nas áreas de meio ambiente
+                        rural e
+                        urbano, atuar na área zoológica de manejo de animais silvestres e consequente conservação da
+                        fauna, promoção da educação ambiental, pesquisa científica e extensão de ensino.</p>
+                    <ul class="d-flex list-unstyled mt-auto">
+                        <li class="me-auto">
+                            <img src="../../static/images/logoSISNAT_circle.png" alt="SISNAT LOGO" width="32"
+                                height="32" class="logoSISNAT">
+                        </li>
+                        <li class="d-flex align-items-center me-3">
+                            <a href="http://ipevs.org.br" target="_blank" class="nav-link  link-light">IPEVS</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
-                        O IPEVS, tem por objetivo desenvolver e executar projetos nas áreas
-                        de Educação, Educação Ambiental, Cultura,
-                        Meio Ambiente, Tecnologia Ambiental, Medicina Veterinária,
-                        Biologia, Transporte e Manejo de animais selvagens e
-                        conservação da Fauna e Flora.
-                    </h6>
-                    <div class="d-flex align-items-center mt-4 mb-4">
-                        <a href="/sisnat/" class="btn-outline-primary-green " target="_self">
-                            Entrar Agora
-                        </a>
+        <div class="col">
+            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                style="background-image: url('../../static/images/banner_sapo.png'); background-repeat: no-repeat; background-origin: content-box; background-size: cover;">
+                <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1 card-opacity">
+                    <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 text-white fw-bold"><a href="http://ipevs.org.br/?page_id=11175" target="_blank"
+                        class="link-light nav-link">Conheça o IPEVS</a></h3>
+                    <p class="pt-5 mt-5 mb-4 text-white">Fundado em 2008, o IPEVS que é pessoa jurídica de direito
+                        privado, sem fins lucrativos, tratando-se de uma Organização da Sociedade Civil de Interesse
+                        Público, com autonomia administrativa e financeira.</p>
+                    <ul class="d-flex list-unstyled mt-auto">
+                        <li class="me-auto">
+                            <img src="../../static/images/logoSISNAT_circle.png" alt="SISNAT LOGO" width="32"
+                                height="32" class="logoSISNAT">
+                        </li>
+                        <li class="d-flex align-items-center me-3">
+                            <a href="http://ipevs.org.br/?page_id=11175" target="_blank"
+                                class="nav-link link-light">Conheça o IPEVS</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                style="background-image: url('../../static/images/banner_coruja.png'); background-repeat: no-repeat; background-origin: content-box; background-size: cover;">
+                <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1 card-opacity">
+                    <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 text-white fw-bold"><a href="http://ipevs.org.br/?page_id=11177" target="_blank"
+                        class="nav-link link-light">Serviços IPEVS</a></h3>
+                    <p class="pt-5 mt-5 mb-4 text-white">Devido à qualidade e multidisciplinaridade de sua equipe
+                        técnica e de seus pesquisadores colaboradores o IPEVS está capacitado a elaborar e executar
+                        alguns dos projeto ...</p>
+                    <ul class="d-flex list-unstyled mt-auto">
+                        <li class="me-auto">
+                            <img src="../../static/images/logoSISNAT_circle.png" alt="SISNAT LOGO" width="32"
+                                height="32" class="logoSISNAT">
+                        </li>
+                        <li class="d-flex align-items-center me-3">
+                            <a href="http://ipevs.org.br/?page_id=11177" target="_blank"
+                                class="nav-link link-light">Serviços IPEVS</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <h2 class="pb-2 border-bottom display-4 fw-bold">Desenvolvido em parceria com:</h2>
+    <div class="py-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-4 col-md-4 mb-3">
+                <div class="card rounded-4 shadow-lg py-3 card-opacity">
+                    <div class="d-flex justify-content-center overflow-hidden">
+                        <img src="../../static/images/logoIPEVS.jpg" alt="UENP IPEVS" width="" height="80" class="">
                     </div>
                 </div>
             </div>
-            <div class="col-2">
-            </div>
-        </section>
-    </div>
-    <div class="footer container">
-        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-            <div class="col-md-4 d-flex align-items-center">
-                <span class="text-muted copyright">&copy; 2022 Sisnat, Inc</span>
+
+            <div class="col-4 col-md-4 mb-3">
+                <div class="card rounded-4 shadow-lg py-3 card-opacity">
+                    <div class="d-flex justify-content-center overflow-hidden">
+                        <img src="../../static/images/logo-uenp.png" alt="UENP logo" width="" height="80" class="">
+                    </div>
+                </div>
             </div>
 
-            <ul class="nav col-md-4 justify-content-end d-flex">
-                <img src="../../static/images/logo-uenp.png" alt="UENP logo" width="" height="80" class="logoUENP">
-                <span class="span-margin"></span>
-                <img src="../../static/images/cct.png" alt="CCT logo" width="" height="70" class="logoCCT">
-            </ul>
+            <div class="col-4 col-md-4 mb-3">
+                <div class="card rounded-4 shadow-lg py-3 card-opacity">
+                    <div class="d-flex justify-content-center overflow-hidden">
+                        <img src="../../static/images/cct.png" alt="CCT logo" width="" height="80" class="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="footer-color">
+    <div class="container">
+        <footer class="py-5">
+            <h2 class="text-light h2 text-center justify-content-center">Fale conosco</h2>
+            <div class="row mt-5">
+                <div class="col-6 col-md-6 mb-3 text-light">
+                    <h5 class="h4">Contato</h5>
+                    <ul class="nav flex-column h6">
+                        <li class="nav-item mb-2"><a class="nav-link p-0 text-light"><i
+                                    class="fa-solid fa-phone mx-2 icon-color"></i>(43) 98435-6175</a></li>
+                        <li class="nav-item mb-2"><a href="mailto:ipevs@ipevs.org.br"
+                                class="nav-link p-0 text-light "><i
+                                    class="fa-solid fa-envelope mx-2 icon-color"></i>ipevs@ipevs.org.br</a></li>
+                        <li class="nav-item mb-2"><a href="https://www.instagram.com/ipevsfauna/"
+                                class="nav-link p-0 text-light "><i
+                                    class="fa-brands fa-instagram mx-2 icon-color"></i>@ipevsfauna</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-6 mb-3 text-light">
+                    <h5 class="h4">Endereço</h5>
+                    <ul class="nav flex-column h6">
+                        <li class="nav-item mb-2"><a class="nav-link p-0 text-light"><i
+                                    class="fa-solid fa-road mx-2 icon-color"></i>Rua Altamiro de Assis Pereira, nº
+                                290</a></li>
+                        <li class="nav-item mb-2"><a class="nav-link p-0 text-light"><i
+                                    class="fa-solid fa-signs-post mx-2 icon-color"></i></i>Jardim Morumbi</a></li>
+                        <li class="nav-item mb-2"><a class="nav-link p-0 text-light"><i
+                                    class="fa-solid fa-location-dot mx-2 icon-color"></i>Cornélio Procópio - PR</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top text-light">
+                <p>Desenvolvido durante o PIBIS</p>
+                <p>Todos os direitos reservados &copy; 2022</p>
+            </div>
         </footer>
     </div>
+</div>
 {% endblock %}
