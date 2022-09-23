@@ -2,6 +2,14 @@
     color: #1b340c;
 }
 
+.return {
+    color: #ffffff;
+}
+
+.return:hover {
+    color: #1b340c;
+}
+
 .btn-primary {
     background-color: #1b340c;
     border-color: #1b340c; 
