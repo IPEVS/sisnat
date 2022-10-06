@@ -205,3 +205,6 @@ JAZZMIN_UI_TWEAKS = {
 }
 
 APPEND_SLASH = True
+
+import django_heroku
+django_heroku.settings(locals())

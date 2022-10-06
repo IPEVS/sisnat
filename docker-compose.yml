@@ -20,7 +20,7 @@ services:
   backend:
     build: sisnat
     ports:
-      - "${BACKEND_HOST_PORT}8000"
+      - "${BACKEND_HOST_PORT}8001"
     command: ${RUNSERVER:-/deploy/run.sh}
     depends_on:
       - postgres
