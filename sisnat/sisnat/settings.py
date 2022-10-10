@@ -35,6 +35,8 @@ DEBUG = env.bool('DEBUG', True)
 
 ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", ("localhost", "0.0.0.0"))
 
+CSRF_TRUSTED_ORIGINS = env.list("CSRF_TRUSTED_ORIGINS", ("https://sisnat.herokuapp.com",))
+
 # Application definition
 
 INSTALLED_APPS = [

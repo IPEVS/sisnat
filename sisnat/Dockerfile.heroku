@@ -1,0 +1,10 @@
+FROM python:3.9
+
+RUN apt-get update && apt-get install -y gettext
+
+COPY . .
+
+RUN pip install --upgrade pip && pip install -r requirements/deploy.txt
+RUN python manage.py collectstatic --noinput
+
+CMD gunicorn sisnat.wsgi:application --bind 0.0.0.0:$PORT
